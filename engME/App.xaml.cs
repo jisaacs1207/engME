@@ -1,4 +1,4 @@
-using System;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,10 +7,11 @@ namespace engME
 {
     public partial class App : Application
     {
+        public static ObservableCollection<NameObject> NameList {get; set;} = new ObservableCollection<NameObject>();
         public App()
         {
             InitializeComponent();
-
+            Methods.FillNameDictionary();
             MainPage = new MainPage();
         }
 

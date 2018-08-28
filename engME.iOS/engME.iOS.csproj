@@ -156,4 +156,35 @@
       <Name>engME</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\me@1x.png" />
+    <BundleResource Include="Resources\me%402x.png" />
+    <BundleResource Include="Resources\me%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\all@1x.png" />
+    <Content Include="Resources\all@2x.png" />
+    <Content Include="Resources\all@3x.png" />
+    <Content Include="Resources\favorite@1x.png" />
+    <Content Include="Resources\favorite@2x.png" />
+    <Content Include="Resources\favorite@3x.png" />
+    <Content Include="Resources\gear@1x.png" />
+    <Content Include="Resources\gear@2x.png" />
+    <Content Include="Resources\gear@3x.png" />
+    <Content Include="Resources\inkpen@1x.png" />
+    <Content Include="Resources\inkpen@2x.png" />
+    <Content Include="Resources\inkpen@3x.png" />
+    <Content Include="Resources\name@1x.png" />
+    <Content Include="Resources\name@2x.png" />
+    <Content Include="Resources\name@3x.png" />
+    <Content Include="Resources\random@1x.png" />
+    <Content Include="Resources\random@2x.png" />
+    <Content Include="Resources\random@3x.png" />
+    <Content Include="Resources\search@1x.png" />
+    <Content Include="Resources\search@2x.png" />
+    <Content Include="Resources\search@3x.png" />
+    <Content Include="Resources\settings@1x.png" />
+    <Content Include="Resources\settings@2x.png" />
+    <Content Include="Resources\settings@3x.png" />
+  </ItemGroup>
 </Project>

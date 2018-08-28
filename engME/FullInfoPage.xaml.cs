@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace engME
@@ -10,6 +8,8 @@ namespace engME
         public FullInfoPage()
         {
             InitializeComponent();
+           
+            
         }
     }
 }

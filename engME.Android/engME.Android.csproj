@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -82,6 +82,60 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\me.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\me.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\me.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\me.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\me.png" />
+    <AndroidResource Include="Resources\drawable\me.png" />
+    <AndroidResource Include="Resources\drawable\all.png" />
+    <AndroidResource Include="Resources\drawable\favorite.png" />
+    <AndroidResource Include="Resources\drawable\gear.png" />
+    <AndroidResource Include="Resources\drawable\inkpen.png" />
+    <AndroidResource Include="Resources\drawable\name.png" />
+    <AndroidResource Include="Resources\drawable\random.png" />
+    <AndroidResource Include="Resources\drawable\search.png" />
+    <AndroidResource Include="Resources\drawable\settings.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\all.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\favorite.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\gear.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\inkpen.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\name.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\random.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\search.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\settings.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\all.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\favorite.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\gear.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\inkpen.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\name.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\random.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\search.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\settings.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\all.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\favorite.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\gear.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\inkpen.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\name.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\random.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\search.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\settings.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\all.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\favorite.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\gear.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\inkpen.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\name.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\random.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\search.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\settings.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\all.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\favorite.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\gear.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\inkpen.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\name.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\random.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\search.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\settings.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -96,5 +150,5 @@
       <Name>engME</Name>
     </ProjectReference>
   </ItemGroup>
- <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

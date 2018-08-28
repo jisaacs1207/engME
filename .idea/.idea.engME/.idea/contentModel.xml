@@ -29,9 +29,13 @@
         <e p="App.xaml.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="engME.csproj" t="IncludeRecursive" />
+        <e p="FullInfoPage.xaml" t="Include" />
+        <e p="FullInfoPage.xaml.cs" t="Include" />
         <e p="MainPage.xaml" t="Include" />
         <e p="MainPage.xaml.cs" t="Include" />
+        <e p="Methods.cs" t="Include" />
         <e p="NameObject.cs" t="Include" />
+        <e p="names.csv" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.0" t="Include">
@@ -39,14 +43,24 @@
             </e>
           </e>
         </e>
+        <e p="SearchPage.xaml" t="Include" />
+        <e p="SearchPage.xaml.cs" t="Include" />
+        <e p="YourFavoritesPage.xaml" t="Include" />
+        <e p="YourFavoritesPage.xaml.cs" t="Include" />
+        <e p="YourFullNamesListPage.xaml" t="Include" />
+        <e p="YourFullNamesListPage.xaml.cs" t="Include" />
         <e p="YourNamePage.xaml" t="Include" />
         <e p="YourNamePage.xaml.cs" t="Include" />
         <e p="YourPersonalityPage.xaml" t="Include" />
         <e p="YourPersonalityPage.xaml.cs" t="Include" />
         <e p="YourPreferencesPage.xaml" t="Include" />
         <e p="YourPreferencesPage.xaml.cs" t="Include" />
+        <e p="YourRandomNamePage.xaml" t="Include" />
+        <e p="YourRandomNamePage.xaml.cs" t="Include" />
         <e p="YourResultsPage.xaml" t="Include" />
         <e p="YourResultsPage.xaml.cs" t="Include" />
+        <e p="YourSearchPage.xaml" t="Include" />
+        <e p="YourSearchPage.xaml.cs" t="Include" />
       </e>
       <e p="engME.Android" t="IncludeRecursive">
         <e p="Assets" t="Include">
@@ -63,22 +77,70 @@
         <e p="Resources" t="Include">
           <e p="AboutResources.txt" t="Include" />
           <e p="drawable" t="Include">
+            <e p="all.png" t="Include" />
+            <e p="favorite.png" t="Include" />
+            <e p="gear.png" t="Include" />
+            <e p="inkpen.png" t="Include" />
             <e p="me.png" t="Include" />
+            <e p="name.png" t="Include" />
+            <e p="random.png" t="Include" />
+            <e p="search.png" t="Include" />
+            <e p="settings.png" t="Include" />
           </e>
           <e p="drawable-hdpi" t="Include">
+            <e p="all.png" t="Include" />
+            <e p="favorite.png" t="Include" />
+            <e p="gear.png" t="Include" />
+            <e p="inkpen.png" t="Include" />
             <e p="me.png" t="Include" />
+            <e p="name.png" t="Include" />
+            <e p="random.png" t="Include" />
+            <e p="search.png" t="Include" />
+            <e p="settings.png" t="Include" />
           </e>
           <e p="drawable-mdpi" t="Include">
+            <e p="all.png" t="Include" />
+            <e p="favorite.png" t="Include" />
+            <e p="gear.png" t="Include" />
+            <e p="inkpen.png" t="Include" />
             <e p="me.png" t="Include" />
+            <e p="name.png" t="Include" />
+            <e p="random.png" t="Include" />
+            <e p="search.png" t="Include" />
+            <e p="settings.png" t="Include" />
           </e>
           <e p="drawable-xhdpi" t="Include">
+            <e p="all.png" t="Include" />
+            <e p="favorite.png" t="Include" />
+            <e p="gear.png" t="Include" />
+            <e p="inkpen.png" t="Include" />
             <e p="me.png" t="Include" />
+            <e p="name.png" t="Include" />
+            <e p="random.png" t="Include" />
+            <e p="search.png" t="Include" />
+            <e p="settings.png" t="Include" />
           </e>
           <e p="drawable-xxhdpi" t="Include">
+            <e p="all.png" t="Include" />
+            <e p="favorite.png" t="Include" />
+            <e p="gear.png" t="Include" />
+            <e p="inkpen.png" t="Include" />
             <e p="me.png" t="Include" />
+            <e p="name.png" t="Include" />
+            <e p="random.png" t="Include" />
+            <e p="search.png" t="Include" />
+            <e p="settings.png" t="Include" />
           </e>
           <e p="drawable-xxxhdpi" t="Include">
+            <e p="all.png" t="Include" />
+            <e p="favorite.png" t="Include" />
+            <e p="gear.png" t="Include" />
+            <e p="inkpen.png" t="Include" />
             <e p="me.png" t="Include" />
+            <e p="name.png" t="Include" />
+            <e p="random.png" t="Include" />
+            <e p="search.png" t="Include" />
+            <e p="settings.png" t="Include" />
           </e>
           <e p="layout" t="Include">
             <e p="Tabbar.axml" t="Include" />
@@ -145,10 +207,34 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="Resources" t="Include">
+          <e p="all@1x.png" t="Include" />
+          <e p="all@2x.png" t="Include" />
+          <e p="all@3x.png" t="Include" />
+          <e p="favorite@1x.png" t="Include" />
+          <e p="favorite@2x.png" t="Include" />
+          <e p="favorite@3x.png" t="Include" />
+          <e p="gear@1x.png" t="Include" />
+          <e p="gear@2x.png" t="Include" />
+          <e p="gear@3x.png" t="Include" />
+          <e p="inkpen@1x.png" t="Include" />
+          <e p="inkpen@2x.png" t="Include" />
+          <e p="inkpen@3x.png" t="Include" />
           <e p="LaunchScreen.storyboard" t="Include" />
-          <e p="me.png" t="Include" />
+          <e p="me@1x.png" t="Include" />
           <e p="me@2x.png" t="Include" />
           <e p="me@3x.png" t="Include" />
+          <e p="name@1x.png" t="Include" />
+          <e p="name@2x.png" t="Include" />
+          <e p="name@3x.png" t="Include" />
+          <e p="random@1x.png" t="Include" />
+          <e p="random@2x.png" t="Include" />
+          <e p="random@3x.png" t="Include" />
+          <e p="search@1x.png" t="Include" />
+          <e p="search@2x.png" t="Include" />
+          <e p="search@3x.png" t="Include" />
+          <e p="settings@1x.png" t="Include" />
+          <e p="settings@2x.png" t="Include" />
+          <e p="settings@3x.png" t="Include" />
         </e>
       </e>
       <e p="engME.sln" t="IncludeFlat" />

@@ -1,7 +1,78 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:engME" x:Class="engME.MainPage">
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-    </StackLayout>
-</ContentPage>
+<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:engME"
+            x:Class="engME.MainPage">
+    <local:YourNamePage Icon="name.png">
+        <local:YourNamePage.Title>
+            <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.Platforms>
+                    <On Platform="iOS" Value="Personality" />
+                </OnPlatform.Platforms>
+            </OnPlatform>
+        </local:YourNamePage.Title>.Title>
+    </local:YourNamePage>
+    <local:YourPersonalityPage Icon="settings.png">
+        <local:YourPersonalityPage.Title>
+            <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.Platforms>
+                    <On Platform="iOS" Value="Personality" />
+                </OnPlatform.Platforms>
+            </OnPlatform>
+        </local:YourPersonalityPage.Title>
+    </local:YourPersonalityPage>
+    <local:YourPreferencesPage Icon="gear.png">
+        <local:YourPreferencesPage.Title>
+            <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.Platforms>
+                    <On Platform="iOS" Value="Preferences" />
+                </OnPlatform.Platforms>
+            </OnPlatform>
+        </local:YourPreferencesPage.Title>
+    </local:YourPreferencesPage>
+    <local:YourResultsPage Icon="inkpen.png">
+        <local:YourResultsPage.Title>
+            <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.Platforms>
+                    <On Platform="iOS" Value="Results" />
+                </OnPlatform.Platforms>
+            </OnPlatform>
+        </local:YourResultsPage.Title>
+    </local:YourResultsPage>
+    <local:YourFavoritesPage Icon="favorite.png">
+        <local:YourFavoritesPage.Title>
+            <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.Platforms>
+                    <On Platform="iOS" Value="Favorites" />
+                </OnPlatform.Platforms>
+            </OnPlatform>
+        </local:YourFavoritesPage.Title>
+    </local:YourFavoritesPage>
+    <local:YourFullNamesListPage Icon="all.png">
+        <local:YourFullNamesListPage.Title>
+            <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.Platforms>
+                    <On Platform="iOS" Value="All Names" />
+                </OnPlatform.Platforms>
+            </OnPlatform>
+        </local:YourFullNamesListPage.Title>
+    </local:YourFullNamesListPage>
+    <local:YourSearchPage Icon="search.png">
+        <local:YourSearchPage.Title>
+            <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.Platforms>
+                    <On Platform="iOS" Value="Search" />
+                </OnPlatform.Platforms>
+            </OnPlatform>
+        </local:YourSearchPage.Title>
+    </local:YourSearchPage>
+    <local:YourRandomNamePage Icon="random.png">
+        <local:YourRandomNamePage.Title>
+            <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.Platforms>
+                    <On Platform="iOS" Value="Random Name" />
+                </OnPlatform.Platforms>
+            </OnPlatform>
+        </local:YourRandomNamePage.Title>
+    </local:YourRandomNamePage>
+</TabbedPage>

@@ -1,5 +1,76 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="engME.YourFullNamesListPage">
-    <ContentPage.Content>
-    </ContentPage.Content>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="engME.YourFullNamesListPage">
+
+    <StackLayout Margin="0,40,0,0">
+        <StackLayout VerticalOptions="End" Padding="20">
+            <Grid>
+                <Button Text="Male" 
+                        VerticalOptions="End" 
+                        HorizontalOptions="Center"
+                        Clicked="Button_OnClicked"
+                        Grid.Column="0" Grid.Row="1"/>
+                <Button Text="Female" 
+                        VerticalOptions="End" 
+                        HorizontalOptions="Center" 
+                        Grid.Column="1" Grid.Row="1"/>
+                <Button Text="All" 
+                        VerticalOptions="End" 
+                        HorizontalOptions="Center" 
+                        Grid.Column="2" Grid.Row="1"/>
+            </Grid>
+        </StackLayout>
+        <StackLayout Orientation="Vertical" VerticalOptions="Fill" HorizontalOptions="FillAndExpand">
+            <ListView x:Name="FullNamesList" VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="1.1*"/>
+                                    <ColumnDefinition Width=".3*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label FontSize="Large" 
+                                       FontAttributes="Bold" 
+                                       HorizontalTextAlignment="Start"
+                                       Margin="20,0,0,0"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Row="0"
+                                       Grid.Column="0">
+                                    <Label.Triggers>
+                                        <DataTrigger TargetType="Label" Binding="{Binding Gender}" Value="F">
+                                            <Setter Property="Text" Value="{Binding Name}"/>
+                                            <Setter Property="TextColor" Value="#cc0066"/>
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Label" Binding="{Binding Gender}" Value="M">
+                                            <Setter Property="Text" Value="{Binding Name}"/>
+                                            <Setter Property="TextColor" Value="#007acc"/>
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Label" Binding="{Binding Gender}" Value="A">
+                                            <Setter Property="Text" Value="{Binding Name}"/>
+                                            <Setter Property="TextColor" Value="#00994d"/>
+                                        </DataTrigger>
+                                    </Label.Triggers>
+                                </Label>
+                                <Label Text="{Binding ShortMeaning}"
+                                       FontSize="Small"
+                                       TextColor="Gray"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Row="0"
+                                       Grid.Column="1">
+                                </Label>
+                                <Image Source="favorite.png"
+                                       Grid.Row="0"
+                                       Grid.Column="2"
+                                       Scale=".7">
+                                </Image>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>    
+            </ListView>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>
