@@ -24,6 +24,41 @@ namespace engME
             _names = new ObservableCollection<NameObject>(_names.OrderBy(x => x.Name));
             FullNamesList.ItemsSource = _names;
         }
+
+        private void MaleButton_OnClicked(object sender, EventArgs e)
+        {
+            _names = new ObservableCollection<NameObject>(App.NameList);
+            foreach (var x in _names.ToList())
+            {
+                if (x.Gender.Contains("F"))
+                {
+                    _names.Remove(x);
+                }
+            }
+            _names = new ObservableCollection<NameObject>(_names.OrderBy(x => x.Name));
+            FullNamesList.ItemsSource = _names;
+        }
+
+        private void FemaleButton_OnClicked(object sender, EventArgs e)
+        {
+            _names = new ObservableCollection<NameObject>(App.NameList);
+            foreach (var x in _names.ToList())
+            {
+                if (x.Gender.Contains("M"))
+                {
+                    _names.Remove(x);
+                }
+            }
+            _names = new ObservableCollection<NameObject>(_names.OrderBy(x => x.Name));
+            FullNamesList.ItemsSource = _names;
+        }
+
+        private void AllButton_OnClicked(object sender, EventArgs e)
+        {
+            _names = new ObservableCollection<NameObject>(App.NameList);
+            _names = new ObservableCollection<NameObject>(_names.OrderBy(x => x.Name));
+            FullNamesList.ItemsSource = _names;
+        }
     }
 }
 
