@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="engME.YourResultsPage">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness"
-                    iOS="0,40,0,0">
-        </OnPlatform>
+                    iOS="0,40,0,0" />
     </ContentPage.Padding>
-    <StackLayout>     
-        <SearchBar Placeholder="Search..." 
+    <StackLayout>
+        <SearchBar Placeholder="Search..."
                    TextChanged="SearchBar_OnTextChanged"
-                   x:Name="NameSearch"/>
+                   x:Name="NameSearch" />
         <StackLayout Orientation="Vertical" VerticalOptions="Fill" HorizontalOptions="FillAndExpand">
-            <ListView x:Name="FullNamesList" 
+            <ListView x:Name="FullNamesList"
                       VerticalOptions="FillAndExpand"
                       ItemSelected="FullNamesList_OnItemSelected">
                 <ListView.ItemTemplate>
@@ -20,12 +20,12 @@
                         <ViewCell>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="1.1*"/>
-                                    <ColumnDefinition Width=".3*"/>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="1.1*" />
+                                    <ColumnDefinition Width=".3*" />
                                 </Grid.ColumnDefinitions>
-                                <Label FontSize="Large" 
-                                       FontAttributes="Bold" 
+                                <Label FontSize="Medium"
+                                       FontAttributes="Bold"
                                        HorizontalTextAlignment="Start"
                                        Margin="20,0,0,0"
                                        VerticalTextAlignment="Center"
@@ -33,16 +33,16 @@
                                        Grid.Column="0">
                                     <Label.Triggers>
                                         <DataTrigger TargetType="Label" Binding="{Binding Gender}" Value="F">
-                                            <Setter Property="Text" Value="{Binding Name}"/>
-                                            <Setter Property="TextColor" Value="#cc0066"/>
+                                            <Setter Property="Text" Value="{Binding Name}" />
+                                            <Setter Property="TextColor" Value="#cc0066" />
                                         </DataTrigger>
                                         <DataTrigger TargetType="Label" Binding="{Binding Gender}" Value="M">
-                                            <Setter Property="Text" Value="{Binding Name}"/>
-                                            <Setter Property="TextColor" Value="#007acc"/>
+                                            <Setter Property="Text" Value="{Binding Name}" />
+                                            <Setter Property="TextColor" Value="#007acc" />
                                         </DataTrigger>
                                         <DataTrigger TargetType="Label" Binding="{Binding Gender}" Value="A">
-                                            <Setter Property="Text" Value="{Binding Name}"/>
-                                            <Setter Property="TextColor" Value="#00994d"/>
+                                            <Setter Property="Text" Value="{Binding Name}" />
+                                            <Setter Property="TextColor" Value="#00994d" />
                                         </DataTrigger>
                                     </Label.Triggers>
                                 </Label>
@@ -51,17 +51,15 @@
                                        TextColor="Gray"
                                        VerticalTextAlignment="Center"
                                        Grid.Row="0"
-                                       Grid.Column="1">
-                                </Label>
+                                       Grid.Column="1" />
                                 <Image Source="favorite.png"
                                        Grid.Row="0"
                                        Grid.Column="2"
-                                       Scale=".7">
-                                </Image>
+                                       Scale=".7" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
-                </ListView.ItemTemplate>    
+                </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
     </StackLayout>

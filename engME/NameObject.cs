@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace engME
+﻿namespace engME
 {
     public class NameObject
     {

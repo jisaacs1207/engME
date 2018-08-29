@@ -1,15 +1,162 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="engME.FullInfoPage"
              Title="{Binding Name}">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness"
-            iOS="0,40,0,0">
-        </OnPlatform>
+                    iOS="0,40,0,0" />
     </ContentPage.Padding>
     <StackLayout>
-        <Button Text="Back" Clicked="Button_OnClicked"></Button>
-        <Label Text="{Binding Name}"/>
+        <Button Text=" &lt; Back" Clicked="Button_OnClicked" HorizontalOptions="Start" FontSize="Large"/>
+        <Label Text="{Binding Name}" 
+               FontSize="48"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="End">
+            <Label.Triggers>
+                <DataTrigger TargetType="Label" Binding="{Binding Gender}" Value="F">
+                    <Setter Property="TextColor" Value="#cc0066" />
+                </DataTrigger>
+                <DataTrigger TargetType="Label" Binding="{Binding Gender}" Value="M">
+                    <Setter Property="TextColor" Value="#007acc" />
+                </DataTrigger>
+                <DataTrigger TargetType="Label" Binding="{Binding Gender}" Value="A">
+                    <Setter Property="TextColor" Value="#00994d" />
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+        <Label Text="{Binding Diminutives}"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Start"
+               FontAttributes="Italic"
+               FontSize="22">
+            <Label.Triggers>
+                <DataTrigger TargetType="Label" Binding="{Binding Gender}" Value="F">
+                    <Setter Property="TextColor" Value="#ff0080" />
+                </DataTrigger>
+                <DataTrigger TargetType="Label" Binding="{Binding Gender}" Value="M">
+                    <Setter Property="TextColor" Value="#0099ff" />
+                </DataTrigger>
+                <DataTrigger TargetType="Label" Binding="{Binding Gender}" Value="A">
+                    <Setter Property="TextColor" Value="#00cc66" />
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+        <Label Text="{Binding ShortMeaning}" FontSize="Small" HorizontalTextAlignment="Center" 
+               Margin="0,0,0,10"/>
+        <BoxView   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   HeightRequest="1"
+                   WidthRequest="200"  
+                   Color="#d9d9d9"></BoxView>
+        <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                
+                <StackLayout Margin="30,10,30,10">
+                    <Label Text="Meaning?"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
+                    <Label HorizontalTextAlignment="Start" FontSize="Small" Text="{Binding LongMeaning}"/>
+                </StackLayout>
+                
+                <BoxView   VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           HeightRequest="1"
+                           WidthRequest="200"  
+                           Color="#d9d9d9"></BoxView>
+                
+                <StackLayout Margin="30,10,30,10">
+                    <Label Text="Suggested?"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
+                    <Label HorizontalTextAlignment="Start" FontSize="Small">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding Suggested}" Value="false">
+                                <Setter Property="Text" Value="It is not suggested that a non-native uses this name due to possible difficulty in pronunciation and spelling, or negative connotations." />
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label" Binding="{Binding Suggested}" Value="true">
+                                <Setter Property="Text" Value="This is a great choice for an English name due to positive connations or ease of pronunciation and spelling." />
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                </StackLayout>
+            
+                <BoxView   VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       HeightRequest="1"
+                       WidthRequest="200"  
+                       Color="#d9d9d9"></BoxView>
+            
+                <StackLayout Margin="30,10,30,10">
+                    <Label Text="Popular?"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
+                    <Label HorizontalTextAlignment="Start" FontSize="Small">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding Popular}" Value="false">
+                                <Setter Property="Text" Value="This name is not among the current top fifty most popular English names." />
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label" Binding="{Binding Popular}" Value="true">
+                                <Setter Property="Text" Value="This name is widely popular and is among the top 50 English names!" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                </StackLayout>
+                
+                <BoxView   VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           HeightRequest="1"
+                           WidthRequest="200"  
+                           Color="#d9d9d9"></BoxView>
+            
+                <StackLayout Margin="30,10,30,10">
+                    <Label Text="Personality?"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
+                    <Label HorizontalTextAlignment="Start" FontSize="Small">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding Personality}" Value="0">
+                                <Setter Property="Text" Value="This name is typically viewed as conservative, serious, or strong." />
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label" Binding="{Binding Personality}" Value="1">
+                                <Setter Property="Text" Value="This name is difficult to judge and is quite neutral." />
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label" Binding="{Binding Personality}" Value="2">
+                                <Setter Property="Text" Value="This name is typically viewed as liberal, fun, or artistic." />
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                </StackLayout>
+            
+                <BoxView   VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           HeightRequest="1"
+                           WidthRequest="200"  
+                           Color="#d9d9d9"></BoxView>
+            
+                <StackLayout Margin="30,10,30,10">
+                    <Label Text="Origin?"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
+                    <Label HorizontalTextAlignment="Start" FontSize="Small" Text="The origin of this name is:"/>
+                    <Label HorizontalTextAlignment="Start" FontSize="Small" Text="{Binding Origin}"/>
+                </StackLayout>
+                
+                <BoxView   VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           HeightRequest="1"
+                           WidthRequest="200"  
+                           Color="#d9d9d9"></BoxView>
+            
+                <StackLayout Margin="30,10,30,10">
+                    <Label Text="Decade?"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
+                    <Label HorizontalTextAlignment="Start" FontSize="Small" Text="Decade of most recent popularity:"/>
+                    <Label HorizontalTextAlignment="Start" FontSize="Small" Text="{Binding Decade}"/>
+                </StackLayout>
+                
+                <BoxView   VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           HeightRequest="1"
+                           WidthRequest="200"  
+                           Color="#d9d9d9"></BoxView>
+               
+          
+            </StackLayout>
+        </ScrollView>
     </StackLayout>
+        
+        
+    
 </ContentPage>

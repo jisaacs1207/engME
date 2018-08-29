@@ -3,18 +3,19 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+
 namespace engME
 {
     public partial class App : Application
     {
-        public static ObservableCollection<NameObject> NameList {get; set;} = new ObservableCollection<NameObject>();
-        
         public App()
         {
             InitializeComponent();
             Methods.FillNameDictionary();
-            MainPage = new MainPage();   
+            MainPage = new MainPage();
         }
+
+        public static ObservableCollection<NameObject> NameList { get; set; } = new ObservableCollection<NameObject>();
 
         protected override void OnStart()
         {

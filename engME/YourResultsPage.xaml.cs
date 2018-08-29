@@ -1,30 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
 using Xamarin.Forms;
-using Xamarin.Forms.Internals;
 
 namespace engME
 {
     public partial class YourResultsPage : ContentPage
     {
-        private ObservableCollection<NameObject> _names { get; set; }
-            = new ObservableCollection<NameObject>(App.NameList);
-
         public YourResultsPage()
         {
             InitializeComponent();
-            
-            foreach (var x in _names)
-            {
-                x.ShortMeaning = "\"" + x.ShortMeaning + "\"";
-            }
 
-            _names=OrderNames(_names);
+            foreach (var x in _names) x.ShortMeaning = "\"" + x.ShortMeaning + "\"";
+
+            _names = OrderNames(_names);
             DisplayCollection(_names);
         }
+
+        private ObservableCollection<NameObject> _names { get; set; }
+            = new ObservableCollection<NameObject>(App.NameList);
 
         private void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)
         {
@@ -32,17 +25,16 @@ namespace engME
             repopulateNames();
             if (Methods.IsNullOrWhiteSpace(SearchString))
             {
-                _names=OrderNames(_names);
+                _names = OrderNames(_names);
                 DisplayCollection(_names);
             }
             else
             {
                 foreach (var x in _names.ToList())
-                {
-                    if (!x.Name.StartsWith(SearchString)) _names.Remove(x);
-                }
-           
-                _names=OrderNames(_names);
+                    if (!x.Name.StartsWith(SearchString))
+                        _names.Remove(x);
+
+                _names = OrderNames(_names);
                 DisplayCollection(_names);
             }
         }
@@ -72,7 +64,3 @@ namespace engME
         }
     }
 }
-
-
-
-

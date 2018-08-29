@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:engME"
             x:Class="engME.MainPage">
@@ -10,7 +11,8 @@
                     <On Platform="iOS" Value="Identity" />
                 </OnPlatform.Platforms>
             </OnPlatform>
-        </local:YourNamePage.Title>.Title>
+        </local:YourNamePage.Title>
+        .Title>
     </local:YourNamePage>
     <local:YourPersonalityPage Icon="settings.png">
         <local:YourPersonalityPage.Title>
