@@ -13,7 +13,7 @@ namespace engME
         {
             InitializeComponent();
             Methods.FillNameDictionary();
-            MainPage = new MainPage();
+            MainPage = new MainPage();   
         }
 
         protected override void OnStart()

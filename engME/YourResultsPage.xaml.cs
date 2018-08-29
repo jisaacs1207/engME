@@ -16,13 +16,13 @@ namespace engME
         public YourResultsPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
+            
             foreach (var x in _names)
             {
                 x.ShortMeaning = "\"" + x.ShortMeaning + "\"";
             }
 
-            OrderNames(_names);
+            _names=OrderNames(_names);
             DisplayCollection(_names);
         }
 
@@ -32,7 +32,7 @@ namespace engME
             repopulateNames();
             if (Methods.IsNullOrWhiteSpace(SearchString))
             {
-                OrderNames(_names);
+                _names=OrderNames(_names);
                 DisplayCollection(_names);
             }
             else
@@ -42,7 +42,7 @@ namespace engME
                     if (!x.Name.StartsWith(SearchString)) _names.Remove(x);
                 }
            
-                OrderNames(_names);
+                _names=OrderNames(_names);
                 DisplayCollection(_names);
             }
         }
@@ -52,14 +52,23 @@ namespace engME
             _names = new ObservableCollection<NameObject>(App.NameList);
         }
 
-        private static void OrderNames(ObservableCollection<NameObject> collection)
+        private static ObservableCollection<NameObject> OrderNames(ObservableCollection<NameObject> collection)
         {
             collection = new ObservableCollection<NameObject>(collection.OrderBy(x => x.Name));
+            return collection;
         }
 
         private void DisplayCollection(ObservableCollection<NameObject> collection)
         {
             FullNamesList.ItemsSource = collection;
+        }
+
+        private async void FullNamesList_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var name = e.SelectedItem as NameObject;
+            if (name == null) return;
+            await Navigation.PushModalAsync(new FullInfoPage(name));
+            FullNamesList.SelectedItem = null;
         }
     }
 }

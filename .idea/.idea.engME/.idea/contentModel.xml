@@ -43,8 +43,6 @@
             </e>
           </e>
         </e>
-        <e p="SearchPage.xaml" t="Include" />
-        <e p="SearchPage.xaml.cs" t="Include" />
         <e p="YourFavoritesPage.xaml" t="Include" />
         <e p="YourFavoritesPage.xaml.cs" t="Include" />
         <e p="YourNamePage.xaml" t="Include" />
@@ -53,12 +51,8 @@
         <e p="YourPersonalityPage.xaml.cs" t="Include" />
         <e p="YourPreferencesPage.xaml" t="Include" />
         <e p="YourPreferencesPage.xaml.cs" t="Include" />
-        <e p="YourRandomNamePage.xaml" t="Include" />
-        <e p="YourRandomNamePage.xaml.cs" t="Include" />
         <e p="YourResultsPage.xaml" t="Include" />
         <e p="YourResultsPage.xaml.cs" t="Include" />
-        <e p="YourSearchPage.xaml" t="Include" />
-        <e p="YourSearchPage.xaml.cs" t="Include" />
       </e>
       <e p="engME.Android" t="IncludeRecursive">
         <e p="Assets" t="Include">

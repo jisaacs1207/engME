@@ -2,13 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="engME.YourResultsPage">
-
-    <StackLayout Margin="0,20,0,0">     
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,40,0,0">
+        </OnPlatform>
+    </ContentPage.Padding>
+    <StackLayout>     
         <SearchBar Placeholder="Search..." 
                    TextChanged="SearchBar_OnTextChanged"
                    x:Name="NameSearch"/>
         <StackLayout Orientation="Vertical" VerticalOptions="Fill" HorizontalOptions="FillAndExpand">
-            <ListView x:Name="FullNamesList" VerticalOptions="FillAndExpand">
+            <ListView x:Name="FullNamesList" 
+                      VerticalOptions="FillAndExpand"
+                      ItemSelected="FullNamesList_OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
