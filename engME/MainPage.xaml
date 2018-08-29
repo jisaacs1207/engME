@@ -7,7 +7,7 @@
         <local:YourNamePage.Title>
             <OnPlatform x:TypeArguments="x:String">
                 <OnPlatform.Platforms>
-                    <On Platform="iOS" Value="Personality" />
+                    <On Platform="iOS" Value="Identity" />
                 </OnPlatform.Platforms>
             </OnPlatform>
         </local:YourNamePage.Title>.Title>
@@ -34,7 +34,7 @@
         <local:YourResultsPage.Title>
             <OnPlatform x:TypeArguments="x:String">
                 <OnPlatform.Platforms>
-                    <On Platform="iOS" Value="Results" />
+                    <On Platform="iOS" Value="Names" />
                 </OnPlatform.Platforms>
             </OnPlatform>
         </local:YourResultsPage.Title>
@@ -48,31 +48,4 @@
             </OnPlatform>
         </local:YourFavoritesPage.Title>
     </local:YourFavoritesPage>
-    <local:YourFullNamesListPage Icon="all.png">
-        <local:YourFullNamesListPage.Title>
-            <OnPlatform x:TypeArguments="x:String">
-                <OnPlatform.Platforms>
-                    <On Platform="iOS" Value="All Names" />
-                </OnPlatform.Platforms>
-            </OnPlatform>
-        </local:YourFullNamesListPage.Title>
-    </local:YourFullNamesListPage>
-    <local:YourSearchPage Icon="search.png">
-        <local:YourSearchPage.Title>
-            <OnPlatform x:TypeArguments="x:String">
-                <OnPlatform.Platforms>
-                    <On Platform="iOS" Value="Search" />
-                </OnPlatform.Platforms>
-            </OnPlatform>
-        </local:YourSearchPage.Title>
-    </local:YourSearchPage>
-    <local:YourRandomNamePage Icon="random.png">
-        <local:YourRandomNamePage.Title>
-            <OnPlatform x:TypeArguments="x:String">
-                <OnPlatform.Platforms>
-                    <On Platform="iOS" Value="Random Name" />
-                </OnPlatform.Platforms>
-            </OnPlatform>
-        </local:YourRandomNamePage.Title>
-    </local:YourRandomNamePage>
 </TabbedPage>

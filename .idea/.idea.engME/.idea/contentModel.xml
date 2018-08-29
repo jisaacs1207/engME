@@ -47,8 +47,6 @@
         <e p="SearchPage.xaml.cs" t="Include" />
         <e p="YourFavoritesPage.xaml" t="Include" />
         <e p="YourFavoritesPage.xaml.cs" t="Include" />
-        <e p="YourFullNamesListPage.xaml" t="Include" />
-        <e p="YourFullNamesListPage.xaml.cs" t="Include" />
         <e p="YourNamePage.xaml" t="Include" />
         <e p="YourNamePage.xaml.cs" t="Include" />
         <e p="YourPersonalityPage.xaml" t="Include" />

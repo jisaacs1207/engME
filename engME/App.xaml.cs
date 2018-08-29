@@ -8,6 +8,7 @@ namespace engME
     public partial class App : Application
     {
         public static ObservableCollection<NameObject> NameList {get; set;} = new ObservableCollection<NameObject>();
+        
         public App()
         {
             InitializeComponent();

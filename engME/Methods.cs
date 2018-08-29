@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace engME
 {
@@ -402,7 +403,7 @@ namespace engME
             PlugNameIn("Zane",true,false,"M",2,2010,"Possible","Zee","God is gracious","Western novelist Zane (born Pearl!) Grey made this name famous. Now, it's in tune with the style of our times, retaining that appealing cowboy image.\n\r Zane Grey was the great-grandson of Ebenezer Zane, founder of Zanesville, Ohio, the town where the writer was born. The name Zane has been on the popularity list since 1921, the heyday of such Zane Grey novels as The Riders of the Purple Sage.\n\r The Arabic name Zayn, as in musician Zayn Malik, sounds exactly the same as Zane but has a different root. Zayn is one of the fastest-rising names in recent years. And some parents--including country singer Mindy McReady -- use the spelling Zayne.");
             PlugNameIn("Mark",true,false,"M",1,1960,"Latin","Marcus","warlike","After centuries of lagging behind other apostle names Peter and Paul, Mark suddenly caught on in the early 1950s, reaching Number 6 by 1960. It was in the Top 10 from 1955 to 1970.\n\r Mark Twain was, of course, the pen name taken by Samuel Clemens. Prominent current bearers include actor Mark Ruffalo, Mark Wahlberg (the onetime Marky Mark) and Facebook founder Mark Zuckerberg.");
             PlugNameIn("Brooks",false,false,"M",2,2010,"English","Bee","of the brook","Surname name, with more masculine heft than Brook or Brooklyn. Brooks Robinson was one of the greatest third basemen ever, playing for the Baltimore Orioles from 1955 until 1977.");
-            PlugNameIn("Nicolas",true,false,"M",0,2000,"Variation","Nick, Nicky","people of vistory","Nicolas is the French and Spanish form, or streamlined spelling, of Nicholas, popularized by actor Nicolas Cage.");
+            PlugNameIn("Nicolas",true,false,"M",0,2000,"Variation","Nick, Nicky","people of victory","Nicolas is the French and Spanish form, or streamlined spelling, of Nicholas, popularized by actor Nicolas Cage.");
             PlugNameIn("Paxton",true,false,"A",2,2010,"English","Tony","peace town","Set apart from other once-male-only surnames because of its peaceful element.");
             PlugNameIn("Judah",true,false,"M",1,2010,"Hebrew","Juder, Jude","praised","Judah is the strong, resonant Old Testament name of the son of Jacob who was the ancestor of one of the tribes of Israel, and from whom the word Jew is derived. Some of the names' popularity might be attributable to the similarly named Jude Law.\n\r Judah Maccabee is acclaimed as one of the greatest warriors in Jewish history. In popular culture, Judah Ben-Hur was the eponymous hero of the novel and film, Ben-Hur, and, more recently, is borne by Judah Friedlander of 30 Rock, and is the name of the young son of Lucy Lawless.");
             PlugNameIn("Kaden",false,false,"M",2,2000,"Variation","Kai, Denny","none","A popular member of popular family: Kadin, Kaeden, Kaiden, and Kayden -- along with Caden, Caiden, and Cayden, as well as Cade and Kade.");
@@ -460,6 +461,11 @@ namespace engME
             };
 
             App.NameList.Add(temp);
+        }
+        
+        public static bool IsNullOrWhiteSpace(string value)
+        {
+            return value == null || value.All(char.IsWhiteSpace);
         }
     }
 }
