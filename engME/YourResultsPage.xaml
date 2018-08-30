@@ -52,10 +52,12 @@
                                        VerticalTextAlignment="Center"
                                        Grid.Row="0"
                                        Grid.Column="1" />
-                                <Image Source="favorite.png"
+                                <Button Image="favorite.png"
                                        Grid.Row="0"
                                        Grid.Column="2"
-                                       Scale=".7" />
+                                       Scale=".7" 
+                                       Opacity=".3"
+                                       Clicked="Button_OnClicked"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Xamarin.Forms;
 
@@ -61,6 +62,12 @@ namespace engME
             if (name == null) return;
             await Navigation.PushModalAsync(new FullInfoPage(name));
             FullNamesList.SelectedItem = null;
+        }
+
+
+        private void Button_OnClicked(object sender, EventArgs e)
+        {
+            
         }
     }
 }

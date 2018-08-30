@@ -9,12 +9,14 @@
                     iOS="0,40,0,0" />
     </ContentPage.Padding>
     <StackLayout>
-        <Button Text=" &lt; Back" Clicked="Button_OnClicked" HorizontalOptions="Start" FontSize="Large"/>
+        <StackLayout Orientation="Horizontal" Margin="15,0,15,0" HorizontalOptions="FillAndExpand" >
+            <Button Text="&lt; Back" Clicked="Button_OnClicked" HorizontalOptions="Start" FontSize="Large"/>
+            <Button Image="favorite.png" HorizontalOptions="EndAndExpand" Opacity=".3"/>
+        </StackLayout>
         <Label Text="{Binding Name}" 
                FontSize="48"
                FontAttributes="Bold"
-               HorizontalTextAlignment="Center"
-               VerticalTextAlignment="End">
+               HorizontalTextAlignment="Center">
             <Label.Triggers>
                 <DataTrigger TargetType="Label" Binding="{Binding Gender}" Value="F">
                     <Setter Property="TextColor" Value="#cc0066" />

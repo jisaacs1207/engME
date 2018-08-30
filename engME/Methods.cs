@@ -1,4 +1,9 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using Newtonsoft.Json;
 
 namespace engME
 {
@@ -932,5 +937,37 @@ namespace engME
         {
             return value == null || value.All(char.IsWhiteSpace);
         }
+
+        public static void AddNameToFavorites(string Name)
+        {
+            var favoritesFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "favorites.txt");
+            App.FavoriteNames.Add(Name);
+            var json = JsonConvert.SerializeObject(App.FavoriteNames);
+            File.WriteAllText(favoritesFile, json);
+        }
+        
+        public static void RemoveNameFromFavorites(string Name)
+        {
+            var favoritesFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "favorites.txt");
+            foreach (var x in App.FavoriteNames.ToList())
+            {
+                if (x.Equals(Name))
+                {
+                    App.FavoriteNames.Remove(Name);
+                }
+            }
+            var json = JsonConvert.SerializeObject(App.FavoriteNames);
+            File.WriteAllText(favoritesFile, json);
+        }
+
+        public static List<string> GetFavorites()
+        {
+            var favoritesFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "favorites.txt");
+            var json = File.ReadAllText(favoritesFile);
+            var names = JsonConvert.DeserializeObject<List<string>>(json);
+            return names;
+        }
+
+
     }
 }
