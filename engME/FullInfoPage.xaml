@@ -11,7 +11,18 @@
     <StackLayout>
         <StackLayout Orientation="Horizontal" Margin="15,0,15,0" HorizontalOptions="FillAndExpand" >
             <Button Text="&lt; Back" Clicked="Button_OnClicked" HorizontalOptions="Start" FontSize="Large"/>
-            <Button Image="favorite.png" HorizontalOptions="EndAndExpand" Opacity=".3"/>
+            <Button x:Name="Favorite" HorizontalOptions="EndAndExpand" Clicked="Favorite_OnClicked" ClassId="{Binding Name}">
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button" Binding="{Binding Favorited}" Value="true">
+                        <Setter Property="Image" Value="favoritered.png" /> 
+                        <Setter Property="Opacity" Value="1"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Button" Binding="{Binding Favorited}" Value="false">
+                        <Setter Property="Image" Value="favorite.png" /> 
+                        <Setter Property="Opacity" Value=".3"/>
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>    
         </StackLayout>
         <Label Text="{Binding Name}" 
                FontSize="48"

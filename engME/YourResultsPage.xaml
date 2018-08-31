@@ -53,14 +53,22 @@
                                        Grid.Row="0"
                                        Grid.Column="1" />
                                 
-                                <Button Image="favorite.png"
-                                       Grid.Row="0"
-                                       Grid.Column="2"
+                                <Button Grid.Row="0" Grid.Column="2"
                                        Scale=".9" 
-                                       Opacity=".3"
                                        ClassId="{Binding Name}"
                                        Clicked="FavoriteHeart_OnClicked"
-                                       x:Name="favoriteHeart"/>
+                                       x:Name="favoriteHeart">
+                                    <Button.Triggers>
+                                        <DataTrigger TargetType="Button" Binding="{Binding Favorited}" Value="true">
+                                            <Setter Property="Image" Value="favoritered.png" /> 
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Button" Binding="{Binding Favorited}" Value="false">
+                                            <Setter Property="Image" Value="favorite.png" /> 
+                                            <Setter Property="Opacity" Value=".3"/>
+                                        </DataTrigger>
+                                    </Button.Triggers>
+                                </Button>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

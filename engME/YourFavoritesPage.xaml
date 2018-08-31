@@ -2,6 +2,70 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="engME.YourFavoritesPage">
-    <ContentPage.Content>
-    </ContentPage.Content>
+             <ContentPage.Padding>
+                          <OnPlatform x:TypeArguments="Thickness"
+                                      iOS="0,40,0,0" />
+             </ContentPage.Padding>
+     <ListView x:Name="FavoritedNameList"
+                      VerticalOptions="FillAndExpand"
+                      ItemSelected="FavoritedNameList_OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="1.1*" />
+                                    <ColumnDefinition Width=".3*" />
+                                </Grid.ColumnDefinitions>
+                                <Label FontSize="Medium"
+                                       FontAttributes="Bold"
+                                       HorizontalTextAlignment="Start"
+                                       Margin="20,0,0,0"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Row="0"
+                                       Grid.Column="0">
+                                    <Label.Triggers>
+                                        <DataTrigger TargetType="Label" Binding="{Binding Gender}" Value="F">
+                                            <Setter Property="Text" Value="{Binding Name}" />
+                                            <Setter Property="TextColor" Value="#cc0066" />
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Label" Binding="{Binding Gender}" Value="M">
+                                            <Setter Property="Text" Value="{Binding Name}" />
+                                            <Setter Property="TextColor" Value="#007acc" />
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Label" Binding="{Binding Gender}" Value="A">
+                                            <Setter Property="Text" Value="{Binding Name}" />
+                                            <Setter Property="TextColor" Value="#00994d" />
+                                        </DataTrigger>
+                                    </Label.Triggers>
+                                </Label>
+                                <Label Text="{Binding ShortMeaning}"
+                                       FontSize="Small"
+                                       TextColor="Gray"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Row="0"
+                                       Grid.Column="1" />
+                                
+                                <Button Grid.Row="0" Grid.Column="2"
+                                       Scale=".9" 
+                                       ClassId="{Binding Name}"
+                                       Clicked="FavoriteHeart_OnClicked"
+                                       x:Name="favoriteHeart">
+                                    <Button.Triggers>
+                                        <DataTrigger TargetType="Button" Binding="{Binding Favorited}" Value="true">
+                                            <Setter Property="Image" Value="favoritered.png" /> 
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Button" Binding="{Binding Favorited}" Value="false">
+                                            <Setter Property="Image" Value="favorite.png" /> 
+                                            <Setter Property="Opacity" Value=".3"/>
+                                        </DataTrigger>
+                                    </Button.Triggers>
+                                </Button>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 </ContentPage>

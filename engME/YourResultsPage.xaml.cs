@@ -1,59 +1,57 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
 namespace engME
 {
     public partial class YourResultsPage : ContentPage
     {
+        public static ObservableCollection<NameObject> _names { get; set; }
+            = new ObservableCollection<NameObject>();
+        
         public YourResultsPage()
         {
+            repopulateNames();
             InitializeComponent();
+
             foreach (var x in _names) x.ShortMeaning = "\"" + x.ShortMeaning + "\"";
-            _names = OrderNames(_names);
-            DisplayCollection(_names);
-            
+            _names = Methods.OrderNames(_names);
+            FullNamesList.ItemsSource = _names;
         }
 
-        private ObservableCollection<NameObject> _names { get; set; }
-            = new ObservableCollection<NameObject>(App.NameList);
+        
 
         private void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            var SearchString = NameSearch.Text;
+            var searchString = NameSearch.Text;
             repopulateNames();
-            if (Methods.IsNullOrWhiteSpace(SearchString))
+            if (Methods.IsNullOrWhiteSpace(searchString))
             {
-                _names = OrderNames(_names);
-                DisplayCollection(_names);
+                _names = Methods.OrderNames(_names);
+                FullNamesList.ItemsSource = _names;
             }
             else
             {
                 foreach (var x in _names.ToList())
-                    if (!x.Name.StartsWith(SearchString))
+                    if (!x.Name.StartsWith(searchString))
                         _names.Remove(x);
 
-                _names = OrderNames(_names);
-                DisplayCollection(_names);
+                _names = Methods.OrderNames(_names);
+                FullNamesList.ItemsSource = _names;
             }
         }
 
-        private void repopulateNames()
-        {
-            _names = new ObservableCollection<NameObject>(App.NameList);
-        }
+        public static void repopulateNames()
+        {    
 
-        private static ObservableCollection<NameObject> OrderNames(ObservableCollection<NameObject> collection)
-        {
-            collection = new ObservableCollection<NameObject>(collection.OrderBy(x => x.Name));
-            return collection;
-        }
+            _names= new ObservableCollection<NameObject>(App.NameList);
+    
+            _names=Methods.OrderNames(_names);
 
-        private void DisplayCollection(ObservableCollection<NameObject> collection)
-        {
-            FullNamesList.ItemsSource = collection;
         }
 
         private async void FullNamesList_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -70,7 +68,6 @@ namespace engME
             var button = (Button) sender;
             var classId = button.ClassId;
             var favorited = Methods.IsFavorited(classId);
-            Console.WriteLine(favorited.ToString());
             if (favorited)
             {
                 Methods.RemoveNameFromFavorites(classId);
@@ -84,5 +81,13 @@ namespace engME
                 button.Opacity = 1;
             }
         }
+        
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            FullNamesList.ItemsSource = null;
+            FullNamesList.ItemsSource = _names;
+        }
     }
+    
 }

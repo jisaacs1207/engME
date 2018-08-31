@@ -14,20 +14,27 @@ namespace engME
 {
     public partial class App : Application
     {
-        public static List<string> FavoriteNames {get; set;} = new List<string>();
         public static ObservableCollection<NameObject> NameList { get; set; } = new ObservableCollection<NameObject>();
-        
+        public static List<string> FavoriteList { get; set; } = new List<string>();
         public App()
         {
-            InitializeComponent();
-            Methods.FillNameDictionary();
-            var favoritesFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "favorites.txt");
-            if (!File.Exists(favoritesFile))
+            Names.FillNameDictionary();
+            FavoriteList = Methods.GetFavorites();
+            foreach (var x in NameList)
             {
-                Methods.AddNameToFavorites("Placeholder");
-                Methods.RemoveNameFromFavorites("Placeholder");
+                var name = x.Name;
+                
+                foreach (var favoritename in FavoriteList)
+                {
+                    
+                    if (favoritename == name)
+                    {
+                        x.Favorited = true;
+                    }
+                }
             }
-            FavoriteNames = Methods.GetFavorites();
+            InitializeComponent();
+            
             MainPage = new MainPage();
         }
 
