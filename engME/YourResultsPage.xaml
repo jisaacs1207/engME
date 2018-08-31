@@ -52,12 +52,15 @@
                                        VerticalTextAlignment="Center"
                                        Grid.Row="0"
                                        Grid.Column="1" />
+                                
                                 <Button Image="favorite.png"
                                        Grid.Row="0"
                                        Grid.Column="2"
-                                       Scale=".7" 
+                                       Scale=".9" 
                                        Opacity=".3"
-                                       Clicked="Button_OnClicked"/>
+                                       ClassId="{Binding Name}"
+                                       Clicked="FavoriteHeart_OnClicked"
+                                       x:Name="favoriteHeart"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

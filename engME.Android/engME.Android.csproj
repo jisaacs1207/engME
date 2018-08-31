@@ -165,5 +165,13 @@
       <Name>engME</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\drawable-hdpi\favoritered.png" />
+    <Content Include="Resources\drawable-mdpi\favoritered.png" />
+    <Content Include="Resources\drawable-xhdpi\favoritered.png" />
+    <Content Include="Resources\drawable-xxhdpi\favoritered.png" />
+    <Content Include="Resources\drawable-xxxhdpi\favoritered.png" />
+    <Content Include="Resources\drawable\favoritered.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

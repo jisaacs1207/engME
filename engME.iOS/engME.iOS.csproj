@@ -173,6 +173,9 @@
     <Content Include="Resources\favorite@1x.png" />
     <Content Include="Resources\favorite@2x.png" />
     <Content Include="Resources\favorite@3x.png" />
+    <Content Include="Resources\favoritered@1x.png" />
+    <Content Include="Resources\favoritered@2x.png" />
+    <Content Include="Resources\favoritered@3x.png" />
     <Content Include="Resources\gear@1x.png" />
     <Content Include="Resources\gear@2x.png" />
     <Content Include="Resources\gear@3x.png" />

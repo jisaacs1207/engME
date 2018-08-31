@@ -968,6 +968,23 @@ namespace engME
             return names;
         }
 
+        public static bool IsFavorited(string Name)
+        {
+            var favorites = App.FavoriteNames;
+            var favorited = false;
+            foreach (var x in favorites)
+            {
+                if (x == Name)
+                {
+                    favorited = true;
+                }
+                else
+                {
+                    favorited=false;
+                }
+            }
 
+            return favorited;
+        }
     }
 }

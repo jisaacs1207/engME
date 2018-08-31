@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Xamarin.Forms;
@@ -10,11 +11,10 @@ namespace engME
         public YourResultsPage()
         {
             InitializeComponent();
-
             foreach (var x in _names) x.ShortMeaning = "\"" + x.ShortMeaning + "\"";
-
             _names = OrderNames(_names);
             DisplayCollection(_names);
+            
         }
 
         private ObservableCollection<NameObject> _names { get; set; }
@@ -65,9 +65,24 @@ namespace engME
         }
 
 
-        private void Button_OnClicked(object sender, EventArgs e)
+        private void FavoriteHeart_OnClicked(object sender, EventArgs e)
         {
-            
+            var button = (Button) sender;
+            var classId = button.ClassId;
+            var favorited = Methods.IsFavorited(classId);
+            Console.WriteLine(favorited.ToString());
+            if (favorited)
+            {
+                Methods.RemoveNameFromFavorites(classId);
+                button.Image = "favorite.png";
+                button.Opacity = .3;
+            }
+            else
+            {
+                Methods.AddNameToFavorites(classId);
+                button.Image = "favoritered.png";
+                button.Opacity = 1;
+            }
         }
     }
 }

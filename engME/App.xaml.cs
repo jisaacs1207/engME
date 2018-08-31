@@ -15,6 +15,7 @@ namespace engME
     public partial class App : Application
     {
         public static List<string> FavoriteNames {get; set;} = new List<string>();
+        public static ObservableCollection<NameObject> NameList { get; set; } = new ObservableCollection<NameObject>();
         
         public App()
         {
@@ -29,8 +30,6 @@ namespace engME
             FavoriteNames = Methods.GetFavorites();
             MainPage = new MainPage();
         }
-                
-        public static ObservableCollection<NameObject> NameList { get; set; } = new ObservableCollection<NameObject>();
 
         protected override void OnStart()
         {

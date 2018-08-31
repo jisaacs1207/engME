@@ -71,6 +71,7 @@
           <e p="drawable" t="Include">
             <e p="all.png" t="Include" />
             <e p="favorite.png" t="Include" />
+            <e p="favoritered.png" t="Include" />
             <e p="gear.png" t="Include" />
             <e p="inkpen.png" t="Include" />
             <e p="me.png" t="Include" />
@@ -82,6 +83,7 @@
           <e p="drawable-hdpi" t="Include">
             <e p="all.png" t="Include" />
             <e p="favorite.png" t="Include" />
+            <e p="favoritered.png" t="Include" />
             <e p="gear.png" t="Include" />
             <e p="inkpen.png" t="Include" />
             <e p="me.png" t="Include" />
@@ -93,6 +95,7 @@
           <e p="drawable-mdpi" t="Include">
             <e p="all.png" t="Include" />
             <e p="favorite.png" t="Include" />
+            <e p="favoritered.png" t="Include" />
             <e p="gear.png" t="Include" />
             <e p="inkpen.png" t="Include" />
             <e p="me.png" t="Include" />
@@ -104,6 +107,7 @@
           <e p="drawable-xhdpi" t="Include">
             <e p="all.png" t="Include" />
             <e p="favorite.png" t="Include" />
+            <e p="favoritered.png" t="Include" />
             <e p="gear.png" t="Include" />
             <e p="inkpen.png" t="Include" />
             <e p="me.png" t="Include" />
@@ -115,6 +119,7 @@
           <e p="drawable-xxhdpi" t="Include">
             <e p="all.png" t="Include" />
             <e p="favorite.png" t="Include" />
+            <e p="favoritered.png" t="Include" />
             <e p="gear.png" t="Include" />
             <e p="inkpen.png" t="Include" />
             <e p="me.png" t="Include" />
@@ -126,6 +131,7 @@
           <e p="drawable-xxxhdpi" t="Include">
             <e p="all.png" t="Include" />
             <e p="favorite.png" t="Include" />
+            <e p="favoritered.png" t="Include" />
             <e p="gear.png" t="Include" />
             <e p="inkpen.png" t="Include" />
             <e p="me.png" t="Include" />
@@ -205,6 +211,9 @@
           <e p="favorite@1x.png" t="Include" />
           <e p="favorite@2x.png" t="Include" />
           <e p="favorite@3x.png" t="Include" />
+          <e p="favoritered@1x.png" t="Include" />
+          <e p="favoritered@2x.png" t="Include" />
+          <e p="favoritered@3x.png" t="Include" />
           <e p="gear@1x.png" t="Include" />
           <e p="gear@2x.png" t="Include" />
           <e p="gear@3x.png" t="Include" />
