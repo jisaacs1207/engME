@@ -46,8 +46,13 @@ namespace engME
         public static List<string> GetFavorites()
         {
             var favoritesFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "favorites.txt");
-            var json = File.ReadAllText(favoritesFile);
-            var names = JsonConvert.DeserializeObject<List<string>>(json);
+            var names = new List<string>();
+            if (File.Exists(favoritesFile))
+            {
+                var json = File.ReadAllText(favoritesFile);
+                names = JsonConvert.DeserializeObject<List<string>>(json);
+            }
+            
             return names;
         }
 
