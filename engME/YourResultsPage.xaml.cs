@@ -28,10 +28,10 @@ namespace engME
 
         private static bool ShowMale { get; set; } = true;
         private static bool ShowFemale { get; set; } = true;
-        private static bool ShowLiberal { get; set; } = true;
-        private static bool ShowConservative { get; set; } = true;
-        private static bool ShowOnlyPopular { get; set; } = true;
-        private static bool ShowOnlySuggested { get; set; } = true;
+        public static bool ShowLiberal { get; set; } = true;
+        public static bool ShowConservative { get; set; } = true;
+        private static bool ShowOnlyPopular { get; set; } = false;
+        private static bool ShowOnlySuggested { get; set; } = false;
         
         public static bool ShowFilters { get; set; } = false;
         public static string SearchString { get; set; } = null;
@@ -200,30 +200,19 @@ namespace engME
 
         private void ResetButtons()
         {
-            if (ShowMale)
-            {
-                ShowMaleButton.TextColor = Color.Default;
-            }
-            if (ShowFemale)
-            {
-                ShowFemaleButton.TextColor = Color.Default;
-            }
-            if (ShowLiberal)
-            {
-                ShowLiberalButton.TextColor = Color.Default;
-            }
-            if (ShowConservative)
-            {
-                ShowConservativeButton.TextColor = Color.Default;
-            }
-            if (ShowOnlyPopular)
-            {
-                ShowPopularButton.TextColor = Color.Default;
-            }
-            if (ShowOnlySuggested)
-            {
-                ShowSuggestedButton.TextColor = Color.Default;
-            }
+            if (ShowMale) ShowMaleButton.TextColor = Color.Default;
+            else ShowMaleButton.TextColor = Color.DarkRed;
+            if (ShowFemale) ShowFemaleButton.TextColor = Color.Default;
+            else ShowFemaleButton.TextColor = Color.DarkRed;
+            if (ShowLiberal) ShowLiberalButton.TextColor = Color.Default;
+            else ShowLiberalButton.TextColor = Color.DarkRed;
+            if (ShowConservative) ShowConservativeButton.TextColor = Color.Default;
+            else ShowConservativeButton.TextColor = Color.DarkRed;
+            if (ShowOnlyPopular) ShowPopularButton.TextColor = Color.Default;
+            else ShowPopularButton.TextColor = Color.DarkRed;
+            if (ShowOnlySuggested) ShowSuggestedButton.TextColor = Color.Default;
+            else ShowSuggestedButton.TextColor = Color.DarkRed;
+            
         }
 
         private void ShowLiberalButton_OnClicked(object sender, EventArgs e)

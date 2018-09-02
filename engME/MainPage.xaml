@@ -9,6 +9,7 @@
             <OnPlatform x:TypeArguments="x:String">
                 <OnPlatform.Platforms>
                     <On Platform="iOS" Value="Identity" />
+                    <On Platform="Android" Value="Identity" />
                 </OnPlatform.Platforms>
             </OnPlatform>
         </local:YourNamePage.Title>
@@ -19,6 +20,7 @@
             <OnPlatform x:TypeArguments="x:String">
                 <OnPlatform.Platforms>
                     <On Platform="iOS" Value="Personality" />
+                    <On Platform="Android" Value="Personality" />
                 </OnPlatform.Platforms>
             </OnPlatform>
         </local:YourPersonalityPage.Title>
@@ -28,6 +30,7 @@
             <OnPlatform x:TypeArguments="x:String">
                 <OnPlatform.Platforms>
                     <On Platform="iOS" Value="Names" />
+                    <On Platform="Android" Value="Names" />
                 </OnPlatform.Platforms>
             </OnPlatform>
         </local:YourResultsPage.Title>
@@ -37,6 +40,7 @@
             <OnPlatform x:TypeArguments="x:String">
                 <OnPlatform.Platforms>
                     <On Platform="iOS" Value="Favorites" />
+                    <On Platform="Android" Value="Names" />
                 </OnPlatform.Platforms>
             </OnPlatform>
         </local:YourFavoritesPage.Title>

@@ -58,7 +58,7 @@
             </Label.Triggers>
         </Label>
         <Label Text="{Binding ShortMeaning}" FontSize="Small" HorizontalTextAlignment="Center" 
-               Margin="0,0,0,10"/>
+               Margin="0,0,0,10" FontAttributes="Bold"/>
         <BoxView   VerticalOptions="Center"
                    HorizontalOptions="Center"
                    HeightRequest="1"
@@ -68,7 +68,7 @@
             <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 
                 <StackLayout Margin="30,10,30,10">
-                    <Label Text="Meaning?"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
+                    <Label Text="Meaning"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
                     <Label HorizontalTextAlignment="Start" FontSize="Small" Text="{Binding LongMeaning}"/>
                 </StackLayout>
                 
@@ -79,7 +79,7 @@
                            Color="#d9d9d9"></BoxView>
                 
                 <StackLayout Margin="30,10,30,10">
-                    <Label Text="Suggested?"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
+                    <Label Text="Suggested"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
                     <Label HorizontalTextAlignment="Start" FontSize="Small">
                         <Label.Triggers>
                             <DataTrigger TargetType="Label" Binding="{Binding Suggested}" Value="false">
@@ -99,7 +99,7 @@
                        Color="#d9d9d9"></BoxView>
             
                 <StackLayout Margin="30,10,30,10">
-                    <Label Text="Popular?"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
+                    <Label Text="Popular"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
                     <Label HorizontalTextAlignment="Start" FontSize="Small">
                         <Label.Triggers>
                             <DataTrigger TargetType="Label" Binding="{Binding Popular}" Value="false">
@@ -119,7 +119,7 @@
                            Color="#d9d9d9"></BoxView>
             
                 <StackLayout Margin="30,10,30,10">
-                    <Label Text="Personality?"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
+                    <Label Text="Personality"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
                     <Label HorizontalTextAlignment="Start" FontSize="Small">
                         <Label.Triggers>
                             <DataTrigger TargetType="Label" Binding="{Binding Personality}" Value="0">
@@ -142,7 +142,7 @@
                            Color="#d9d9d9"></BoxView>
             
                 <StackLayout Margin="30,10,30,10">
-                    <Label Text="Origin?"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
+                    <Label Text="Origin"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
                     <Label HorizontalTextAlignment="Start" FontSize="Small" Text="The origin of this name is:"/>
                     <Label HorizontalTextAlignment="Start" FontSize="Small" Text="{Binding Origin}"/>
                 </StackLayout>
@@ -154,7 +154,7 @@
                            Color="#d9d9d9"></BoxView>
             
                 <StackLayout Margin="30,10,30,10">
-                    <Label Text="Decade?"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
+                    <Label Text="Decade"  FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,10"></Label>
                     <Label HorizontalTextAlignment="Start" FontSize="Small" Text="Decade of most recent popularity:"/>
                     <Label HorizontalTextAlignment="Start" FontSize="Small" Text="{Binding Decade}"/>
                 </StackLayout>
