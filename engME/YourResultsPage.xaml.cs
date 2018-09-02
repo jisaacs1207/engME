@@ -29,8 +29,14 @@ namespace engME
         private static bool ShowFemale { get; set; } = true;
         private static bool ShowLiberal { get; set; } = true;
         private static bool ShowConservative { get; set; } = true;
-        private static bool ShowPopular { get; set; } = true;
-        private static bool ShowSuggested { get; set; } = true;
+        private static bool ShowOnlyPopular { get; set; } = true;
+        private static bool ShowOnlySuggested { get; set; } = true;
+        
+        public static bool ShowFilters { get; set; } = false;
+        public static string SearchString { get; set; } = null;
+        
+        private static object LastFocus { get; set; } = null;
+        
         
         public YourResultsPage()
         {
@@ -44,9 +50,9 @@ namespace engME
 
         private void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            var searchString = NameSearch.Text;
+            SearchString = NameSearch.Text;
             repopulateNames();
-            if (Methods.IsNullOrWhiteSpace(searchString))
+            if (Methods.IsNullOrWhiteSpace(SearchString))
             {
                 _names = Methods.OrderNames(_names);
                 _names = RemoveFiltered(_names);
@@ -55,7 +61,7 @@ namespace engME
             else
             {
                 foreach (var x in _names.ToList())
-                    if (!x.Name.StartsWith(searchString))
+                    if (!x.Name.StartsWith(SearchString))
                         _names.Remove(x);
 
                 _names = Methods.OrderNames(_names);
@@ -86,6 +92,7 @@ namespace engME
             if (name == null) return;
             await Navigation.PushModalAsync(new FullInfoPage(name));
             FullNamesList.SelectedItem = null;
+            LastFocus = e.SelectedItem;
         }
 
 
@@ -112,10 +119,26 @@ namespace engME
         {
             
             FullNamesList.ItemsSource = null;
-            Methods.OrderNames(_names);
+            repopulateNames();
+            var newNames = new ObservableCollection<NameObject>(App.NameList);
+            Methods.OrderNames(newNames);
             _names = RemoveFiltered(_names);
-            FullNamesList.ItemsSource = _names;
+            
             ResetButtons();
+            if (!Methods.IsNullOrWhiteSpace(SearchString))
+            {
+                foreach (var x in newNames.ToList())
+                    if (!x.Name.StartsWith(SearchString))
+                        newNames.Remove(x);
+            }
+            newNames = new ObservableCollection<NameObject>(RemoveFiltered(newNames));
+            newNames = new ObservableCollection<NameObject>(Methods.OrderNames(newNames));
+            FullNamesList.ItemsSource = newNames;
+            if (LastFocus!=null)
+            {
+                FullNamesList.ScrollTo(LastFocus,ScrollToPosition.Center,true);
+                LastFocus = null;
+            }
             base.OnAppearing();
         }
 
@@ -162,15 +185,13 @@ namespace engME
             
             if (!buttonType)
             {                
-                button.BackgroundColor = Color.FromHex("#e6f2ff");
                 button.TextColor = Color.Default;
             }
 
             else if (buttonType)
             {
                 returnBool = false;     
-                button.BackgroundColor = Color.Default;
-                button.TextColor = Color.Default;
+                button.TextColor = Color.DarkRed;
                 
             }
             return returnBool;
@@ -180,32 +201,26 @@ namespace engME
         {
             if (ShowMale)
             {
-                ShowMaleButton.BackgroundColor = Color.FromHex("#e6f2ff");
                 ShowMaleButton.TextColor = Color.Default;
             }
             if (ShowFemale)
             {
-                ShowFemaleButton.BackgroundColor = Color.FromHex("#e6f2ff");
                 ShowFemaleButton.TextColor = Color.Default;
             }
             if (ShowLiberal)
             {
-                ShowLiberalButton.BackgroundColor = Color.FromHex("#e6f2ff");
                 ShowLiberalButton.TextColor = Color.Default;
             }
             if (ShowConservative)
             {
-                ShowConservativeButton.BackgroundColor = Color.FromHex("#e6f2ff");
                 ShowConservativeButton.TextColor = Color.Default;
             }
-            if (ShowPopular)
+            if (ShowOnlyPopular)
             {
-                ShowPopularButton.BackgroundColor = Color.FromHex("#e6f2ff");
                 ShowPopularButton.TextColor = Color.Default;
             }
-            if (ShowSuggested)
+            if (ShowOnlySuggested)
             {
-                ShowSuggestedButton.BackgroundColor = Color.FromHex("#e6f2ff");
                 ShowSuggestedButton.TextColor = Color.Default;
             }
         }
@@ -248,7 +263,7 @@ namespace engME
 
         private void ShowPopularButton_OnClicked(object sender, EventArgs e)
         {
-            ShowPopular = ButtonSwitch(sender, ShowPopular);
+            ShowOnlyPopular = ButtonSwitch(sender, ShowOnlyPopular);
             var searchString = NameSearch.Text;
             repopulateNames();
             var newNames = new ObservableCollection<NameObject>(_names);
@@ -266,7 +281,7 @@ namespace engME
 
         private void ShowSuggestedButton_OnClicked(object sender, EventArgs e)
         {
-            ShowSuggested = ButtonSwitch(sender, ShowSuggested);
+            ShowOnlySuggested = ButtonSwitch(sender, ShowOnlySuggested);
             var searchString = NameSearch.Text;
             repopulateNames();
             var newNames = new ObservableCollection<NameObject>(_names);
@@ -288,12 +303,30 @@ namespace engME
             if(!ShowFemale) notAllowed.AddRange(_namesFemale.ToList());
             if(!ShowConservative) notAllowed.AddRange(_namesConservative.ToList());
             if(!ShowLiberal) notAllowed.AddRange(_namesLiberal.ToList());
-            if(!ShowPopular) notAllowed.AddRange(_namesNotPopular.ToList());
-            if(!ShowSuggested) notAllowed.AddRange(_namesNotSuggested.ToList());
+            if(ShowOnlyPopular) notAllowed.AddRange(_namesNotPopular.ToList());
+            if(ShowOnlySuggested) notAllowed.AddRange(_namesNotSuggested.ToList());
             var noDupsNotAllowed = new HashSet<NameObject>(notAllowed).ToList();
             var filtered =  toFilter.Except(noDupsNotAllowed.ToList());
             var returnedCollection = new ObservableCollection<NameObject>(filtered);
             return  returnedCollection;
+        }
+
+
+        private void ShowFiltersButton_OnClicked(object sender, EventArgs e)
+        {
+            var button = (Button) sender;
+            if (ShowFilters)
+            {
+                ShowFilters = false;
+                FiltersGrid.IsVisible = false;
+                button.Text = " ↓ Show Filters ↓ ";
+            }
+            else
+            {
+                ShowFilters = true;
+                FiltersGrid.IsVisible = true;
+                button.Text = " ↑ Hide Filters ↑ ";
+            }
         }
     }
     
