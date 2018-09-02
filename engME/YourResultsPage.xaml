@@ -2,6 +2,7 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:engME;assembly=engME"
              x:Class="engME.YourResultsPage">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness"
@@ -11,6 +12,57 @@
         <SearchBar Placeholder="Search..."
                    TextChanged="SearchBar_OnTextChanged"
                    x:Name="NameSearch" />
+        <Grid HorizontalOptions="CenterAndExpand" Margin="2,0,2,0">
+            <Button Text="  Male  " 
+                    BorderWidth="2" 
+                    BorderColor="LightBlue" 
+                    x:Name="ShowMaleButton" 
+                    Clicked="ShowMaleButton_OnClicked"
+                    Grid.Row="0"
+                    Grid.Column="0">
+            </Button>
+            <Button Text="  Female  " 
+                    BorderWidth="2" 
+                    BorderColor="LightBlue" 
+                    x:Name="ShowFemaleButton" 
+                    Clicked="ShowFemaleButton_OnClicked"
+                    Grid.Row="0"
+                    Grid.Column="1">
+            </Button>
+            <Button Text="  Only Popular  " 
+                    BorderWidth="2" 
+                    BorderColor="LightBlue" 
+                    x:Name="ShowPopularButton" 
+                    Clicked="ShowPopularButton_OnClicked"
+                    Grid.Row="1"
+                    Grid.Column="0">
+            </Button>
+            <Button Text="  Only Suggested  " 
+                    BorderWidth="2" 
+                    BorderColor="LightBlue" 
+                    x:Name="ShowSuggestedButton" 
+                    Clicked="ShowSuggestedButton_OnClicked"
+                    Grid.Row="1"
+                    Grid.Column="1">
+            </Button>
+            <Button Text="  Liberal  " 
+                    BorderWidth="2" 
+                    BorderColor="LightBlue" 
+                    x:Name="ShowLiberalButton" 
+                    Clicked="ShowLiberalButton_OnClicked"
+                    Grid.Row="2"
+                    Grid.Column="0">
+            </Button>
+            <Button Text="  Conservative  " 
+                    BorderWidth="2" 
+                    BorderColor="LightBlue" 
+                    x:Name="ShowConservativeButton" 
+                    Clicked="ShowConservativeButton_OnClicked"
+                    Grid.Row="2"
+                    Grid.Column="1">
+            </Button>
+            
+        </Grid>
         <StackLayout Orientation="Vertical" VerticalOptions="Fill" HorizontalOptions="FillAndExpand">
             <ListView x:Name="FullNamesList"
                       VerticalOptions="FillAndExpand"

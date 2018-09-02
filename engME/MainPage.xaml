@@ -23,15 +23,6 @@
             </OnPlatform>
         </local:YourPersonalityPage.Title>
     </local:YourPersonalityPage>
-    <local:YourPreferencesPage Icon="gear.png">
-        <local:YourPreferencesPage.Title>
-            <OnPlatform x:TypeArguments="x:String">
-                <OnPlatform.Platforms>
-                    <On Platform="iOS" Value="Preferences" />
-                </OnPlatform.Platforms>
-            </OnPlatform>
-        </local:YourPreferencesPage.Title>
-    </local:YourPreferencesPage>
     <local:YourResultsPage Icon="inkpen.png">
         <local:YourResultsPage.Title>
             <OnPlatform x:TypeArguments="x:String">

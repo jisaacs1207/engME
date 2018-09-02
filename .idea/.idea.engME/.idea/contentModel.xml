@@ -51,8 +51,6 @@
         <e p="YourNamePage.xaml.cs" t="Include" />
         <e p="YourPersonalityPage.xaml" t="Include" />
         <e p="YourPersonalityPage.xaml.cs" t="Include" />
-        <e p="YourPreferencesPage.xaml" t="Include" />
-        <e p="YourPreferencesPage.xaml.cs" t="Include" />
         <e p="YourResultsPage.xaml" t="Include" />
         <e p="YourResultsPage.xaml.cs" t="Include" />
       </e>
