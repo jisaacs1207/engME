@@ -73,5 +73,10 @@ namespace engME
             return collection;
         }
         
+        public interface IKeyboardHelper
+        {
+            void HideKeyboard();
+        }
+        
     }
 }

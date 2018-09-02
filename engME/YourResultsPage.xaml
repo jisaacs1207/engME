@@ -10,7 +10,7 @@
     </ContentPage.Padding>
     <StackLayout>
         <StackLayout>
-            <SearchBar Placeholder="Search..."
+            <SearchBar Placeholder="Search..." SearchButtonPressed="NameSearch_OnSearchButtonPressed"
                        TextChanged="SearchBar_OnTextChanged"
                        x:Name="NameSearch"/>
         

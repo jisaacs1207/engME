@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
+using SearchBar = Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar;
 
 namespace engME
 {
@@ -327,6 +328,11 @@ namespace engME
                 FiltersGrid.IsVisible = true;
                 button.Text = " ↑ Hide Filters ↑ ";
             }
+        }
+
+        private void NameSearch_OnSearchButtonPressed(object sender, EventArgs e)
+        {
+            NameSearch.Unfocus();;
         }
     }
     
