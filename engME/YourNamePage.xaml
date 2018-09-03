@@ -3,7 +3,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="engME.YourNamePage">
-    <ContentPage.Content>
-
-    </ContentPage.Content>
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,40,0,0" />
+    </ContentPage.Padding>
+    <StackLayout >
+        <Label Text="What's Your First Name?"/>
+        <Entry x:Name="NameEntry" MaxLength="12"/>
+        <Label Text="Birthday?"/>
+        <DatePicker/>
+        <Picker/>
+    </StackLayout>
 </ContentPage>

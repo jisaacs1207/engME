@@ -12,7 +12,8 @@
         <StackLayout>
             <SearchBar Placeholder="Search..." SearchButtonPressed="NameSearch_OnSearchButtonPressed"
                        TextChanged="SearchBar_OnTextChanged"
-                       x:Name="NameSearch"/>
+                       x:Name="NameSearch"
+                       BackgroundColor="LightGray"/>
         
             <Button Text=" ↓ Show Filters ↓ " Clicked="ShowFiltersButton_OnClicked" HeightRequest="12" Scale=".8"/>
             <Grid HorizontalOptions="CenterAndExpand" Margin="2,0,2,0" IsVisible="False" x:Name="FiltersGrid" Padding="5">

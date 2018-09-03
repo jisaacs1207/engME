@@ -13,7 +13,6 @@
                 </OnPlatform.Platforms>
             </OnPlatform>
         </local:YourNamePage.Title>
-        .Title>
     </local:YourNamePage>
     <local:YourPersonalityPage Icon="settings.png">
         <local:YourPersonalityPage.Title>

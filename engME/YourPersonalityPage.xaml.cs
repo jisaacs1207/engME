@@ -46,7 +46,7 @@ namespace engME
             var slider = sender;
             if (slider.Value > 1)
             {
-                slider.ThumbColor=Color.ForestGreen;
+                slider.ThumbColor=Color.MediumPurple;
                 
             }
             else if (slider.Value < -1)

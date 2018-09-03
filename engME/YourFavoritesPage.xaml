@@ -6,6 +6,11 @@
                           <OnPlatform x:TypeArguments="Thickness"
                                       iOS="0,40,0,0" />
              </ContentPage.Padding>
+    <StackLayout VerticalOptions="FillAndExpand">
+        <AbsoluteLayout VerticalOptions="FillAndExpand">
+            <BoxView AbsoluteLayout.LayoutBounds="0, 0, 1, 1"  Color="LightGray" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+        </AbsoluteLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
      <ListView x:Name="FavoritedNameList"
                       VerticalOptions="FillAndExpand"
                       ItemSelected="FavoritedNameList_OnItemSelected">
@@ -68,4 +73,9 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+                </StackLayout>
+        <AbsoluteLayout VerticalOptions="FillAndExpand">
+            <BoxView AbsoluteLayout.LayoutBounds=".8, 0, 1, 1"  Color="LightGray" AbsoluteLayout.LayoutFlags="All"/>
+        </AbsoluteLayout>
+        </StackLayout>
 </ContentPage>

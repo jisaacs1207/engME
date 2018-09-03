@@ -8,5 +8,11 @@ namespace engME
         {
             InitializeComponent();
         }
+
+        protected override void OnDisappearing()
+        {
+            var entry = (Entry) NameEntry;
+            var text = entry.Text;
+        }
     }
 }
