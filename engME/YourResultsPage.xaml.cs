@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using SearchBar = Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar;
 
 namespace engME
