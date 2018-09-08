@@ -58,7 +58,15 @@
 
             </Grid>
         </StackLayout>
-        <StackLayout Orientation="Vertical" VerticalOptions="Fill" HorizontalOptions="FillAndExpand">
+        <StackLayout x:Name="NoNamesStack" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="false">
+            <Label HorizontalTextAlignment="Center" TextColor="DarkGray">
+                <Label.Text>
+                    There are no names that match your criteria. Please change your filters or search text.
+                </Label.Text>
+            </Label>
+        </StackLayout>
+        <StackLayout x:Name="ListStack" Orientation="Vertical" VerticalOptions="Fill" HorizontalOptions="FillAndExpand" IsVisible="true">
+
             <ListView x:Name="FullNamesList"
                       VerticalOptions="FillAndExpand"
                       ItemSelected="FullNamesList_OnItemSelected">

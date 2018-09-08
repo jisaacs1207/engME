@@ -71,6 +71,7 @@ namespace engME
                 _names = RemoveFiltered(_names);
                 FullNamesList.ItemsSource = _names;
             }
+            HideShowNamesList(_names);
         }
 
         public static void repopulateNames()
@@ -145,7 +146,7 @@ namespace engME
                 FullNamesList.ScrollTo(LastFocus, ScrollToPosition.Center, true);
                 LastFocus = null;
             }
-
+            HideShowNamesList(_names);
             base.OnAppearing();
         }
 
@@ -163,6 +164,7 @@ namespace engME
             newNames = new ObservableCollection<NameObject>(RemoveFiltered(newNames));
             newNames = new ObservableCollection<NameObject>(Methods.OrderNames(newNames));
             FullNamesList.ItemsSource = newNames;
+            HideShowNamesList(newNames);
         }
 
         private void ShowFemaleButton_OnClicked(object sender, EventArgs e)
@@ -179,6 +181,7 @@ namespace engME
             newNames = new ObservableCollection<NameObject>(RemoveFiltered(newNames));
             newNames = new ObservableCollection<NameObject>(Methods.OrderNames(newNames));
             FullNamesList.ItemsSource = newNames;
+            HideShowNamesList(newNames);
         }
 
         private bool ButtonSwitch(object sender, bool buttonType)
@@ -196,7 +199,7 @@ namespace engME
                 returnBool = false;
                 button.TextColor = Color.DarkRed;
             }
-
+            
             return returnBool;
         }
 
@@ -230,6 +233,7 @@ namespace engME
             newNames = new ObservableCollection<NameObject>(RemoveFiltered(newNames));
             newNames = new ObservableCollection<NameObject>(Methods.OrderNames(newNames));
             FullNamesList.ItemsSource = newNames;
+            HideShowNamesList(newNames);
         }
 
         private void ShowConservativeButton_OnClicked(object sender, EventArgs e)
@@ -246,6 +250,7 @@ namespace engME
             newNames = new ObservableCollection<NameObject>(RemoveFiltered(newNames));
             newNames = new ObservableCollection<NameObject>(Methods.OrderNames(newNames));
             FullNamesList.ItemsSource = newNames;
+            HideShowNamesList(newNames);
         }
 
         private void ShowPopularButton_OnClicked(object sender, EventArgs e)
@@ -262,6 +267,7 @@ namespace engME
             newNames = new ObservableCollection<NameObject>(RemoveFiltered(newNames));
             newNames = new ObservableCollection<NameObject>(Methods.OrderNames(newNames));
             FullNamesList.ItemsSource = newNames;
+            HideShowNamesList(newNames);
         }
 
         private void ShowSuggestedButton_OnClicked(object sender, EventArgs e)
@@ -278,6 +284,7 @@ namespace engME
             newNames = new ObservableCollection<NameObject>(RemoveFiltered(newNames));
             newNames = new ObservableCollection<NameObject>(Methods.OrderNames(newNames));
             FullNamesList.ItemsSource = newNames;
+            HideShowNamesList(newNames);
         }
 
         private static ObservableCollection<NameObject> RemoveFiltered(IEnumerable<NameObject> toFilter)
@@ -310,13 +317,27 @@ namespace engME
                 ShowFilters = true;
                 FiltersGrid.IsVisible = true;
                 button.Text = " ↑ Hide Filters ↑ ";
-            }
+            } 
         }
 
         private void NameSearch_OnSearchButtonPressed(object sender, EventArgs e)
         {
             NameSearch.Unfocus();
             ;
+        }
+
+        private  void HideShowNamesList(ObservableCollection<NameObject> names)
+        {
+            if (names.Count == 0)
+            {
+                NoNamesStack.IsVisible = true;
+                ListStack.IsVisible = false;
+            }
+            else
+            {
+                NoNamesStack.IsVisible = false;
+                ListStack.IsVisible = true;
+            }
         }
     }
 }

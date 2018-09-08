@@ -15,8 +15,7 @@
                    FontSize="Medium" 
                    TextColor="DarkGray" 
                    HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   Opacity=".5"/>
+                   VerticalTextAlignment="Center"/>
         </StackLayout>
         <StackLayout x:Name="FavoritesListViewStack" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="True">
             <ListView x:Name="FavoritedNameList"
