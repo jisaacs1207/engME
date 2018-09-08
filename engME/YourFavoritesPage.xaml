@@ -2,18 +2,24 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="engME.YourFavoritesPage"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true">
-             <ContentPage.Padding>
-                          <OnPlatform x:TypeArguments="Thickness"
-                                      iOS="0,20,0,0" />
-             </ContentPage.Padding>
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0" />
+    </ContentPage.Padding>
     <StackLayout VerticalOptions="FillAndExpand">
-        <AbsoluteLayout VerticalOptions="FillAndExpand">
-            <BoxView AbsoluteLayout.LayoutBounds="0, 0, 1, 1"  Color="LightGray" AbsoluteLayout.LayoutFlags="SizeProportional"/>
-        </AbsoluteLayout>
-            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-     <ListView x:Name="FavoritedNameList"
+        <StackLayout x:Name="NoFavoritesLayout" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="false">
+            <Label x:Name="NoFavoritesText" 
+                   Text="No favorite names." 
+                   FontSize="Medium" 
+                   TextColor="DarkGray" 
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Opacity=".5"/>
+        </StackLayout>
+        <StackLayout x:Name="FavoritesListViewStack" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="True">
+            <ListView x:Name="FavoritedNameList"
                       VerticalOptions="FillAndExpand"
                       ItemSelected="FavoritedNameList_OnItemSelected">
                 <ListView.ItemTemplate>
@@ -53,20 +59,22 @@
                                        VerticalTextAlignment="Center"
                                        Grid.Row="0"
                                        Grid.Column="1" />
-                                
+
                                 <Button Grid.Row="0" Grid.Column="2"
-                                       Scale=".9" 
-                                       ClassId="{Binding Name}"
-                                       Clicked="FavoriteHeart_OnClicked"
-                                       x:Name="favoriteHeart">
+                                        Scale=".9"
+                                        ClassId="{Binding Name}"
+                                        Clicked="FavoriteHeart_OnClicked"
+                                        x:Name="favoriteHeart"
+                                        BorderColor="Transparent"
+                                        BackgroundColor="Transparent">
                                     <Button.Triggers>
                                         <DataTrigger TargetType="Button" Binding="{Binding Favorited}" Value="true">
-                                            <Setter Property="Image" Value="favoritered.png" /> 
-                                            <Setter Property="Opacity" Value="1"/>
+                                            <Setter Property="Image" Value="favoritered.png" />
+                                            <Setter Property="Opacity" Value="1" />
                                         </DataTrigger>
                                         <DataTrigger TargetType="Button" Binding="{Binding Favorited}" Value="false">
-                                            <Setter Property="Image" Value="favorite.png" /> 
-                                            <Setter Property="Opacity" Value=".3"/>
+                                            <Setter Property="Image" Value="favorite.png" />
+                                            <Setter Property="Opacity" Value=".3" />
                                         </DataTrigger>
                                     </Button.Triggers>
                                 </Button>
@@ -75,9 +83,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-                </StackLayout>
-        <AbsoluteLayout VerticalOptions="FillAndExpand">
-            <BoxView AbsoluteLayout.LayoutBounds=".8, 0, 1, 1"  Color="LightGray" AbsoluteLayout.LayoutFlags="All"/>
-        </AbsoluteLayout>
         </StackLayout>
+    </StackLayout>
 </ContentPage>

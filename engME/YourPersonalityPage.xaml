@@ -2,28 +2,49 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="engME.YourPersonalityPage"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness"
-            iOS="0,20,0,0" />
+                    iOS="0,20,0,0" />
     </ContentPage.Padding>
     <StackLayout VerticalOptions="FillAndExpand">
-        <AbsoluteLayout VerticalOptions="FillAndExpand">
-            <BoxView AbsoluteLayout.LayoutBounds="0, 0, 1, 1"  Color="LightGray" AbsoluteLayout.LayoutFlags="SizeProportional"/>
-        </AbsoluteLayout>
         
+
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-    
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".6*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width=".6*"/>
+
+            <Grid Margin="20,20,20,20">
+                   <Grid.RowDefinitions>
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                   </Grid.RowDefinitions>
+                   <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width=".6*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                
-                <Label Text="Academic" Grid.Row="0" Grid.Column="0" FontSize="12" TextColor="DodgerBlue" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                <Slider Grid.Row="0" Grid.Column="1" 
+
+                <Label Text="Academic" Grid.Row="0" Grid.Column="0" FontSize="16" TextColor="DodgerBlue"
+                       FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                <Slider Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
                         x:Name="SliderOne"
                         Minimum="-10"
@@ -32,12 +53,13 @@
                         MinimumTrackColor="LightGray"
                         MaximumTrackColor="LightGray"
                         Opacity=".3"
-                        ValueChanged="SliderOne_OnValueChanged">
-                </Slider>
-                <Label Text="Artistic" Grid.Row="0" Grid.Column="2" FontSize="12" TextColor="#8c1aff" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                
-                <Label Text="Shy" Grid.Row="1" Grid.Column="0" FontSize="12" TextColor="DodgerBlue" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                <Slider Grid.Row="1" Grid.Column="1" 
+                        ValueChanged="SliderOne_OnValueChanged" />
+                <Label Text="Artistic" Grid.Row="0" Grid.Column="2" FontSize="16" TextColor="#8c1aff"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+                <Label Text="Shy" Grid.Row="2" Grid.Column="0" FontSize="16" TextColor="DodgerBlue"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                <Slider Grid.Row="3" Grid.ColumnSpan="3" Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
                         x:Name="SliderTwo"
                         Minimum="-10"
@@ -46,12 +68,13 @@
                         MinimumTrackColor="LightGray"
                         MaximumTrackColor="LightGray"
                         Opacity=".3"
-                        ValueChanged="SliderTwo_OnValueChanged">
-                </Slider>
-                <Label Text="Friendly" Grid.Row="1" Grid.Column="2" FontSize="12" TextColor="#8c1aff" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                
-                <Label Text="Studious" Grid.Row="2" Grid.Column="0" FontSize="12" TextColor="DodgerBlue" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                <Slider Grid.Row="2" Grid.Column="1" 
+                        ValueChanged="SliderTwo_OnValueChanged" />
+                <Label Text="Friendly" Grid.Row="2" Grid.Column="2" FontSize="16" TextColor="#8c1aff"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+                <Label Text="Studious" Grid.Row="4" Grid.Column="0" FontSize="16" TextColor="DodgerBlue"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                <Slider Grid.Row="5" Grid.ColumnSpan="3" Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
                         x:Name="SliderThree"
                         Minimum="-10"
@@ -60,12 +83,13 @@
                         MinimumTrackColor="LightGray"
                         MaximumTrackColor="LightGray"
                         Opacity=".3"
-                        ValueChanged="SliderThree_OnValueChanged">
-                </Slider>
-                <Label Text="Dreamer" Grid.Row="2" Grid.Column="2" FontSize="12" TextColor="#8c1aff" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                
-                <Label Text="Traditional" Grid.Row="3" Grid.Column="0" FontSize="12" TextColor="DodgerBlue" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                <Slider Grid.Row="3" Grid.Column="1" 
+                        ValueChanged="SliderThree_OnValueChanged" />
+                <Label Text="Dreamer" Grid.Row="4" Grid.Column="2" FontSize="16" TextColor="#8c1aff"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+                <Label Text="Traditional" Grid.Row="6" Grid.Column="0" FontSize="16" TextColor="DodgerBlue"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                <Slider Grid.Row="7" Grid.ColumnSpan="3" Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
                         x:Name="SliderFour"
                         Minimum="-10"
@@ -74,12 +98,13 @@
                         MinimumTrackColor="LightGray"
                         MaximumTrackColor="LightGray"
                         Opacity=".3"
-                        ValueChanged="SliderFour_OnValueChanged">
-                </Slider>
-                <Label Text="Fashionable" Grid.Row="3" Grid.Column="2" FontSize="12" TextColor="#8c1aff" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                
-                <Label Text="Agreeable" Grid.Row="4" Grid.Column="0" FontSize="12" TextColor="DodgerBlue" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                <Slider Grid.Row="4" Grid.Column="1" 
+                        ValueChanged="SliderFour_OnValueChanged" />
+                <Label Text="Fashionable" Grid.Row="6" Grid.Column="2" FontSize="16" TextColor="#8c1aff"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+                <Label Text="Agreeable" Grid.Row="8" Grid.Column="0" FontSize="16" TextColor="DodgerBlue"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                <Slider Grid.Row="9" Grid.ColumnSpan="3" Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
                         x:Name="SliderFive"
                         Minimum="-10"
@@ -88,12 +113,13 @@
                         MinimumTrackColor="LightGray"
                         MaximumTrackColor="LightGray"
                         Opacity=".3"
-                        ValueChanged="SliderFive_OnValueChanged">
-                </Slider>
-                <Label Text="Assertive" Grid.Row="4" Grid.Column="2" FontSize="12" TextColor="#8c1aff" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                
-                <Label Text="Thoughtful" Grid.Row="5" Grid.Column="0" FontSize="12" TextColor="DodgerBlue" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                <Slider Grid.Row="5" Grid.Column="1" 
+                        ValueChanged="SliderFive_OnValueChanged" />
+                <Label Text="Assertive" Grid.Row="8" Grid.Column="2" FontSize="16" TextColor="#8c1aff"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+                <Label Text="Thoughtful" Grid.Row="10" Grid.Column="0" FontSize="16" TextColor="DodgerBlue"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                <Slider Grid.Row="11" Grid.ColumnSpan="3" Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
                         x:Name="SliderSix"
                         Minimum="-10"
@@ -102,12 +128,13 @@
                         MinimumTrackColor="LightGray"
                         MaximumTrackColor="LightGray"
                         Opacity=".3"
-                        ValueChanged="SliderSix_OnValueChanged">
-                </Slider>
-                <Label Text="Impulsive" Grid.Row="5" Grid.Column="2" FontSize="12" TextColor="#8c1aff" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                
-                <Label Text="Reserved" Grid.Row="6" Grid.Column="0" FontSize="12" TextColor="DodgerBlue" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                <Slider Grid.Row="6" Grid.Column="1" 
+                        ValueChanged="SliderSix_OnValueChanged" />
+                <Label Text="Impulsive" Grid.Row="10" Grid.Column="2" FontSize="16" TextColor="#8c1aff"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+                <Label Text="Reserved" Grid.Row="12" Grid.Column="0" FontSize="16" TextColor="DodgerBlue"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                <Slider Grid.Row="13" Grid.ColumnSpan="3" Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
                         x:Name="SliderSeven"
                         Minimum="-10"
@@ -116,26 +143,28 @@
                         MinimumTrackColor="LightGray"
                         MaximumTrackColor="LightGray"
                         Opacity=".3"
-                        ValueChanged="SliderSeven_OnValueChanged">
-                </Slider>
-                <Label Text="Bold" Grid.Row="6" Grid.Column="2" FontSize="12" TextColor="#8c1aff" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                
-                <Label Text="Critical" Grid.Row="7" Grid.Column="0" FontSize="12" TextColor="DodgerBlue" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                <Slider Grid.Row="7" Grid.Column="1" 
-                    HorizontalOptions="FillAndExpand"
-                    x:Name="SliderEight"
-                    Minimum="-10"
-                    Maximum="10"
-                    Value="0"
+                        ValueChanged="SliderSeven_OnValueChanged" />
+                <Label Text="Bold" Grid.Row="12" Grid.Column="2" FontSize="16" TextColor="#8c1aff" FontAttributes="Bold"
+                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+                <Label Text="Critical" Grid.Row="14" Grid.Column="0" FontSize="16" TextColor="DodgerBlue"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                <Slider Grid.Row="15" Grid.ColumnSpan="3" Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"
+                        x:Name="SliderEight"
+                        Minimum="-10"
+                        Maximum="10"
+                        Value="0"
                         MinimumTrackColor="LightGray"
                         MaximumTrackColor="LightGray"
                         Opacity=".3"
-                        ValueChanged="SliderEight_OnValueChanged">
-                </Slider>
-                <Label Text="Accepting" Grid.Row="7" Grid.Column="2" FontSize="12" TextColor="#8c1aff" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                
-                <Label Text="Careful" Grid.Row="8" Grid.Column="0" FontSize="12" TextColor="DodgerBlue" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                <Slider Grid.Row="8" Grid.Column="1" 
+                        ValueChanged="SliderEight_OnValueChanged" />
+                <Label Text="Accepting" Grid.Row="14" Grid.Column="2" FontSize="16" TextColor="#8c1aff"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+                <Label Text="Careful" Grid.Row="16" Grid.Column="0" FontSize="16" TextColor="DodgerBlue"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                <Slider Grid.Row="17" Grid.ColumnSpan="3" Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
                         x:Name="SliderNine"
                         Minimum="-10"
@@ -144,31 +173,29 @@
                         MinimumTrackColor="LightGray"
                         MaximumTrackColor="LightGray"
                         Opacity=".3"
-                        ValueChanged="SliderNine_OnValueChanged">
-                    
-                </Slider>
-                <Label Text="Carefree" Grid.Row="8" Grid.Column="2" FontSize="12" TextColor="#8c1aff" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                    
-                <Label Text="Cautious" Grid.Row="9" Grid.Column="0" FontSize="12" TextColor="DodgerBlue" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                <Slider Grid.Row="9" Grid.Column="1" 
-                    HorizontalOptions="FillAndExpand"
-                    x:Name="SliderTen"
-                    Minimum="-10"
-                    Maximum="10"
-                    Value="0"
+                        ValueChanged="SliderNine_OnValueChanged" />
+                <Label Text="Carefree" Grid.Row="16" Grid.Column="2" FontSize="16" TextColor="#8c1aff"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+                <Label Text="Cautious" Grid.Row="18" Grid.Column="0" FontSize="16" TextColor="DodgerBlue"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                <Slider Grid.Row="19" Grid.ColumnSpan="3" Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"
+                        x:Name="SliderTen"
+                        Minimum="-10"
+                        Maximum="10"
+                        Value="0"
                         MinimumTrackColor="LightGray"
                         MaximumTrackColor="LightGray"
                         Opacity=".3"
-                        ValueChanged="SliderTen_OnValueChanged">
-                </Slider>
-                <Label Text="Curious" Grid.Row="9" Grid.Column="2" FontSize="12" TextColor="#8c1aff" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                    
-                    
+                        ValueChanged="SliderTen_OnValueChanged" />
+                <Label Text="Curious" Grid.Row="18" Grid.Column="2" FontSize="16" TextColor="#8c1aff"
+                       FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+
             </Grid>
-            
+
         </StackLayout>
-        <AbsoluteLayout VerticalOptions="FillAndExpand">
-            <BoxView AbsoluteLayout.LayoutBounds=".8, 0, 1, 1"  Color="LightGray" AbsoluteLayout.LayoutFlags="All"/>
-        </AbsoluteLayout>
+        
     </StackLayout>
 </ContentPage>

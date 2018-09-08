@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:engME;assembly=engME"
              x:Class="engME.YourResultsPage"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness"
@@ -15,52 +15,47 @@
             <SearchBar Placeholder="Search..." SearchButtonPressed="NameSearch_OnSearchButtonPressed"
                        TextChanged="SearchBar_OnTextChanged"
                        x:Name="NameSearch"
-                       BackgroundColor="LightGray"/>
-        
-            <Button Text=" ↓ Show Filters ↓ " Clicked="ShowFiltersButton_OnClicked" HeightRequest="12" Scale=".8"/>
-            <Grid HorizontalOptions="CenterAndExpand" Margin="2,0,2,0" IsVisible="False" x:Name="FiltersGrid" Padding="5">
+                       BackgroundColor="LightGray" />
+
+            <Button Text=" ↓ Show Filters ↓ " Clicked="ShowFiltersButton_OnClicked" HeightRequest="12" Scale=".8" />
+            <Grid HorizontalOptions="CenterAndExpand" Margin="2,0,2,0" IsVisible="False" x:Name="FiltersGrid"
+                  Padding="5">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".5*"/>
-                    <ColumnDefinition Width=".9*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width=".5*" />
+                    <ColumnDefinition Width=".9*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Button Text="  Male  " HeightRequest="15"
-                        x:Name="ShowMaleButton" 
+                        x:Name="ShowMaleButton"
                         Clicked="ShowMaleButton_OnClicked"
                         Grid.Row="0"
-                        Grid.Column="0">
-                </Button>
+                        Grid.Column="0" />
                 <Button Text="  Female  " HeightRequest="15"
-                        x:Name="ShowFemaleButton" 
+                        x:Name="ShowFemaleButton"
                         Clicked="ShowFemaleButton_OnClicked"
                         Grid.Row="1"
-                        Grid.Column="0">
-                </Button>
+                        Grid.Column="0" />
                 <Button Text="  Only Popular  " HeightRequest="15"
-                        x:Name="ShowPopularButton" 
+                        x:Name="ShowPopularButton"
                         Clicked="ShowPopularButton_OnClicked"
                         Grid.Row="0"
-                        Grid.Column="2">
-                </Button>
+                        Grid.Column="2" />
                 <Button Text="  Only Suggested  " HeightRequest="15"
-                        x:Name="ShowSuggestedButton" 
+                        x:Name="ShowSuggestedButton"
                         Clicked="ShowSuggestedButton_OnClicked"
                         Grid.Row="1"
-                        Grid.Column="2">
-                </Button>
-                <Button Text="  Liberal  " 
+                        Grid.Column="2" />
+                <Button Text="  Liberal  "
                         x:Name="ShowLiberalButton" HeightRequest="15"
                         Clicked="ShowLiberalButton_OnClicked"
                         Grid.Row="0"
-                        Grid.Column="1">
-                </Button>
-                <Button Text="  Conservative  " 
+                        Grid.Column="1" />
+                <Button Text="  Conservative  "
                         x:Name="ShowConservativeButton" HeightRequest="15"
                         Clicked="ShowConservativeButton_OnClicked"
                         Grid.Row="1"
-                        Grid.Column="1">
-                </Button>
-                
+                        Grid.Column="1" />
+
             </Grid>
         </StackLayout>
         <StackLayout Orientation="Vertical" VerticalOptions="Fill" HorizontalOptions="FillAndExpand">
@@ -104,20 +99,22 @@
                                        VerticalTextAlignment="Center"
                                        Grid.Row="0"
                                        Grid.Column="1" />
-                                
+
                                 <Button Grid.Row="0" Grid.Column="2"
-                                       Scale=".9" 
-                                       ClassId="{Binding Name}"
-                                       Clicked="FavoriteHeart_OnClicked"
-                                       x:Name="favoriteHeart">
+                                        Scale=".9"
+                                        ClassId="{Binding Name}"
+                                        Clicked="FavoriteHeart_OnClicked"
+                                        x:Name="favoriteHeart"
+                                        BorderColor="Transparent"
+                                        BackgroundColor="Transparent">
                                     <Button.Triggers>
                                         <DataTrigger TargetType="Button" Binding="{Binding Favorited}" Value="true">
-                                            <Setter Property="Image" Value="favoritered.png" /> 
-                                            <Setter Property="Opacity" Value="1"/>
+                                            <Setter Property="Image" Value="favoritered.png" />
+                                            <Setter Property="Opacity" Value="1" />
                                         </DataTrigger>
                                         <DataTrigger TargetType="Button" Binding="{Binding Favorited}" Value="false">
-                                            <Setter Property="Image" Value="favorite.png" /> 
-                                            <Setter Property="Opacity" Value=".3"/>
+                                            <Setter Property="Image" Value="favorite.png" />
+                                            <Setter Property="Opacity" Value=".3" />
                                         </DataTrigger>
                                     </Button.Triggers>
                                 </Button>
@@ -127,8 +124,5 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-        <AbsoluteLayout VerticalOptions="FillAndExpand">
-            <BoxView AbsoluteLayout.LayoutBounds=".8, 0, 1, 1"  Color="LightGray" AbsoluteLayout.LayoutFlags="All"/>
-        </AbsoluteLayout>
     </StackLayout>
 </ContentPage>

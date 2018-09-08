@@ -19,7 +19,7 @@
             <OnPlatform x:TypeArguments="x:String">
                 <OnPlatform.Platforms>
                     <On Platform="iOS" Value="Personality" />
-                    <On Platform="Android" Value="Personality" />
+                    <On Platform="Android" Value="Traits" />
                 </OnPlatform.Platforms>
             </OnPlatform>
         </local:YourPersonalityPage.Title>
@@ -39,7 +39,7 @@
             <OnPlatform x:TypeArguments="x:String">
                 <OnPlatform.Platforms>
                     <On Platform="iOS" Value="Favorites" />
-                    <On Platform="Android" Value="Names" />
+                    <On Platform="Android" Value="Saved" />
                 </OnPlatform.Platforms>
             </OnPlatform>
         </local:YourFavoritesPage.Title>

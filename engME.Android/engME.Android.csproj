@@ -52,7 +52,7 @@
       <Version>11.0.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>3.1.0.697729</Version>
+      <Version>3.2.0.729530-pre2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Design">
       <Version>27.0.2.1</Version>
@@ -151,6 +151,11 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\random.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\search.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\settings.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\EngMeIcon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\EngMeIcon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\EngMeIcon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\EngMeIcon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\EngMeIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -166,12 +171,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\drawable-hdpi\favoritered.png" />
-    <Content Include="Resources\drawable-mdpi\favoritered.png" />
-    <Content Include="Resources\drawable-xhdpi\favoritered.png" />
-    <Content Include="Resources\drawable-xxhdpi\favoritered.png" />
-    <Content Include="Resources\drawable-xxxhdpi\favoritered.png" />
-    <Content Include="Resources\drawable\favoritered.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\favoritered.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\favoritered.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\favoritered.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\favoritered.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\favoritered.png" />
+    <AndroidResource Include="Resources\drawable\favoritered.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

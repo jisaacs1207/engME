@@ -1,45 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
-using SearchBar = Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar;
 
 namespace engME
 {
     public partial class YourResultsPage : ContentPage
     {
-        public static ObservableCollection<NameObject> _names { get; set; }
-            = new ObservableCollection<NameObject>();
-        public static ObservableCollection<NameObject> _namesMale { get; set; }
-            = new ObservableCollection<NameObject>();
-        public static ObservableCollection<NameObject> _namesFemale { get; set; }
-            = new ObservableCollection<NameObject>();
-        public static ObservableCollection<NameObject> _namesNotPopular { get; set; }
-            = new ObservableCollection<NameObject>();
-        public static ObservableCollection<NameObject> _namesNotSuggested { get; set; }
-            = new ObservableCollection<NameObject>();
-        public static ObservableCollection<NameObject> _namesConservative { get; set; }
-            = new ObservableCollection<NameObject>();
-        public static ObservableCollection<NameObject> _namesLiberal { get; set; }
-            = new ObservableCollection<NameObject>();
-
-        private static bool ShowMale { get; set; } = true;
-        private static bool ShowFemale { get; set; } = true;
-        public static bool ShowLiberal { get; set; } = true;
-        public static bool ShowConservative { get; set; } = true;
-        private static bool ShowOnlyPopular { get; set; } = false;
-        private static bool ShowOnlySuggested { get; set; } = false;
-        
-        public static bool ShowFilters { get; set; } = false;
-        public static string SearchString { get; set; } = null;
-        
-        private static object LastFocus { get; set; } = null;
-        
-        
         public YourResultsPage()
         {
             repopulateNames();
@@ -49,6 +17,39 @@ namespace engME
             _names = Methods.OrderNames(_names);
             FullNamesList.ItemsSource = _names;
         }
+
+        public static ObservableCollection<NameObject> _names { get; set; }
+            = new ObservableCollection<NameObject>();
+
+        public static ObservableCollection<NameObject> _namesMale { get; set; }
+            = new ObservableCollection<NameObject>();
+
+        public static ObservableCollection<NameObject> _namesFemale { get; set; }
+            = new ObservableCollection<NameObject>();
+
+        public static ObservableCollection<NameObject> _namesNotPopular { get; set; }
+            = new ObservableCollection<NameObject>();
+
+        public static ObservableCollection<NameObject> _namesNotSuggested { get; set; }
+            = new ObservableCollection<NameObject>();
+
+        public static ObservableCollection<NameObject> _namesConservative { get; set; }
+            = new ObservableCollection<NameObject>();
+
+        public static ObservableCollection<NameObject> _namesLiberal { get; set; }
+            = new ObservableCollection<NameObject>();
+
+        public static bool ShowMale { get; set; } = true;
+        public static bool ShowFemale { get; set; } = true;
+        public static bool ShowLiberal { get; set; } = true;
+        public static bool ShowConservative { get; set; } = true;
+        public static bool ShowOnlyPopular { get; set; } = true;
+        public static bool ShowOnlySuggested { get; set; } = true;
+
+        public static bool ShowFilters { get; set; }
+        public static string SearchString { get; set; }
+
+        private static object LastFocus { get; set; }
 
         private void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)
         {
@@ -73,19 +74,19 @@ namespace engME
         }
 
         public static void repopulateNames()
-        {    
-            
-            _names= new ObservableCollection<NameObject>(App.NameList);
+        {
+            _names = new ObservableCollection<NameObject>(App.NameList);
             foreach (var x in _names)
             {
-                if(!x.Popular) _namesNotPopular.Add(x);
-                if(x.Gender=="F") _namesFemale.Add(x);
-                if(x.Gender=="M") _namesMale.Add(x);
-                if(!x.Suggested) _namesNotSuggested.Add(x);
-                if(x.Personality ==0) _namesConservative.Add(x);
-                if(x.Personality==2) _namesLiberal.Add(x);
+                if (!x.Popular) _namesNotPopular.Add(x);
+                if (x.Gender == "F") _namesFemale.Add(x);
+                if (x.Gender == "M") _namesMale.Add(x);
+                if (!x.Suggested) _namesNotSuggested.Add(x);
+                if (x.Personality == 0) _namesConservative.Add(x);
+                if (x.Personality == 2) _namesLiberal.Add(x);
             }
-            _names=Methods.OrderNames(_names);
+
+            _names = Methods.OrderNames(_names);
         }
 
         private async void FullNamesList_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -116,31 +117,35 @@ namespace engME
                 button.Opacity = 1;
             }
         }
-        
+
         protected override void OnAppearing()
         {
-            
+            if (!Methods.IsNullOrWhiteSpace(YourNamePage.NameEntryVal))
+            {
+                var transliteration = Methods.Transliterate(YourNamePage.NameEntryVal[0].ToString());
+                NameSearch.Text = transliteration;
+                YourNamePage.NameEntryVal = null;
+            }
             FullNamesList.ItemsSource = null;
             repopulateNames();
             var newNames = new ObservableCollection<NameObject>(App.NameList);
             Methods.OrderNames(newNames);
             _names = RemoveFiltered(_names);
-            
+
             ResetButtons();
             if (!Methods.IsNullOrWhiteSpace(SearchString))
-            {
                 foreach (var x in newNames.ToList())
                     if (!x.Name.StartsWith(SearchString))
                         newNames.Remove(x);
-            }
             newNames = new ObservableCollection<NameObject>(RemoveFiltered(newNames));
             newNames = new ObservableCollection<NameObject>(Methods.OrderNames(newNames));
             FullNamesList.ItemsSource = newNames;
-            if (LastFocus!=null)
+            if (LastFocus != null)
             {
-                FullNamesList.ScrollTo(LastFocus,ScrollToPosition.Center,true);
+                FullNamesList.ScrollTo(LastFocus, ScrollToPosition.Center, true);
                 LastFocus = null;
             }
+
             base.OnAppearing();
         }
 
@@ -151,11 +156,9 @@ namespace engME
             repopulateNames();
             var newNames = new ObservableCollection<NameObject>(_names);
             if (!Methods.IsNullOrWhiteSpace(searchString))
-            {
                 foreach (var x in newNames.ToList())
                     if (!x.Name.StartsWith(searchString))
                         newNames.Remove(x);
-            }
 
             newNames = new ObservableCollection<NameObject>(RemoveFiltered(newNames));
             newNames = new ObservableCollection<NameObject>(Methods.OrderNames(newNames));
@@ -169,11 +172,9 @@ namespace engME
             repopulateNames();
             var newNames = new ObservableCollection<NameObject>(_names);
             if (!Methods.IsNullOrWhiteSpace(searchString))
-            {
                 foreach (var x in newNames.ToList())
                     if (!x.Name.StartsWith(searchString))
                         newNames.Remove(x);
-            }
 
             newNames = new ObservableCollection<NameObject>(RemoveFiltered(newNames));
             newNames = new ObservableCollection<NameObject>(Methods.OrderNames(newNames));
@@ -184,18 +185,18 @@ namespace engME
         {
             var button = (Button) sender;
             var returnBool = true;
-            
+
             if (!buttonType)
-            {                
+            {
                 button.TextColor = Color.Default;
             }
 
             else if (buttonType)
             {
-                returnBool = false;     
+                returnBool = false;
                 button.TextColor = Color.DarkRed;
-                
             }
+
             return returnBool;
         }
 
@@ -213,7 +214,6 @@ namespace engME
             else ShowPopularButton.TextColor = Color.DarkRed;
             if (ShowOnlySuggested) ShowSuggestedButton.TextColor = Color.Default;
             else ShowSuggestedButton.TextColor = Color.DarkRed;
-            
         }
 
         private void ShowLiberalButton_OnClicked(object sender, EventArgs e)
@@ -223,11 +223,9 @@ namespace engME
             repopulateNames();
             var newNames = new ObservableCollection<NameObject>(_names);
             if (!Methods.IsNullOrWhiteSpace(searchString))
-            {
                 foreach (var x in newNames.ToList())
                     if (!x.Name.StartsWith(searchString))
                         newNames.Remove(x);
-            }
 
             newNames = new ObservableCollection<NameObject>(RemoveFiltered(newNames));
             newNames = new ObservableCollection<NameObject>(Methods.OrderNames(newNames));
@@ -241,11 +239,9 @@ namespace engME
             repopulateNames();
             var newNames = new ObservableCollection<NameObject>(_names);
             if (!Methods.IsNullOrWhiteSpace(searchString))
-            {
                 foreach (var x in newNames.ToList())
                     if (!x.Name.StartsWith(searchString))
                         newNames.Remove(x);
-            }
 
             newNames = new ObservableCollection<NameObject>(RemoveFiltered(newNames));
             newNames = new ObservableCollection<NameObject>(Methods.OrderNames(newNames));
@@ -259,11 +255,9 @@ namespace engME
             repopulateNames();
             var newNames = new ObservableCollection<NameObject>(_names);
             if (!Methods.IsNullOrWhiteSpace(searchString))
-            {
                 foreach (var x in newNames.ToList())
                     if (!x.Name.StartsWith(searchString))
                         newNames.Remove(x);
-            }
 
             newNames = new ObservableCollection<NameObject>(RemoveFiltered(newNames));
             newNames = new ObservableCollection<NameObject>(Methods.OrderNames(newNames));
@@ -277,29 +271,28 @@ namespace engME
             repopulateNames();
             var newNames = new ObservableCollection<NameObject>(_names);
             if (!Methods.IsNullOrWhiteSpace(searchString))
-            {
                 foreach (var x in newNames.ToList())
                     if (!x.Name.StartsWith(searchString))
                         newNames.Remove(x);
-            }
 
             newNames = new ObservableCollection<NameObject>(RemoveFiltered(newNames));
             newNames = new ObservableCollection<NameObject>(Methods.OrderNames(newNames));
             FullNamesList.ItemsSource = newNames;
         }
+
         private static ObservableCollection<NameObject> RemoveFiltered(IEnumerable<NameObject> toFilter)
         {
             var notAllowed = new List<NameObject>();
-            if(!ShowMale){ notAllowed.AddRange(_namesMale.ToList());}
-            if(!ShowFemale) notAllowed.AddRange(_namesFemale.ToList());
-            if(!ShowConservative) notAllowed.AddRange(_namesConservative.ToList());
-            if(!ShowLiberal) notAllowed.AddRange(_namesLiberal.ToList());
-            if(ShowOnlyPopular) notAllowed.AddRange(_namesNotPopular.ToList());
-            if(ShowOnlySuggested) notAllowed.AddRange(_namesNotSuggested.ToList());
+            if (!ShowMale) notAllowed.AddRange(_namesMale.ToList());
+            if (!ShowFemale) notAllowed.AddRange(_namesFemale.ToList());
+            if (!ShowConservative) notAllowed.AddRange(_namesConservative.ToList());
+            if (!ShowLiberal) notAllowed.AddRange(_namesLiberal.ToList());
+            if (ShowOnlyPopular) notAllowed.AddRange(_namesNotPopular.ToList());
+            if (ShowOnlySuggested) notAllowed.AddRange(_namesNotSuggested.ToList());
             var noDupsNotAllowed = new HashSet<NameObject>(notAllowed).ToList();
-            var filtered =  toFilter.Except(noDupsNotAllowed.ToList());
+            var filtered = toFilter.Except(noDupsNotAllowed.ToList());
             var returnedCollection = new ObservableCollection<NameObject>(filtered);
-            return  returnedCollection;
+            return returnedCollection;
         }
 
 
@@ -322,8 +315,8 @@ namespace engME
 
         private void NameSearch_OnSearchButtonPressed(object sender, EventArgs e)
         {
-            NameSearch.Unfocus();;
+            NameSearch.Unfocus();
+            ;
         }
     }
-    
 }

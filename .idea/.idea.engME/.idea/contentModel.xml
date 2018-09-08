@@ -150,22 +150,27 @@
             <e p="icon_round.xml" t="Include" />
           </e>
           <e p="mipmap-hdpi" t="Include">
+            <e p="EngMeIcon.png" t="Include" />
             <e p="Icon.png" t="Include" />
             <e p="launcher_foreground.png" t="Include" />
           </e>
           <e p="mipmap-mdpi" t="Include">
+            <e p="EngMeIcon.png" t="Include" />
             <e p="Icon.png" t="Include" />
             <e p="launcher_foreground.png" t="Include" />
           </e>
           <e p="mipmap-xhdpi" t="Include">
+            <e p="EngMeIcon.png" t="Include" />
             <e p="Icon.png" t="Include" />
             <e p="launcher_foreground.png" t="Include" />
           </e>
           <e p="mipmap-xxhdpi" t="Include">
+            <e p="EngMeIcon.png" t="Include" />
             <e p="Icon.png" t="Include" />
             <e p="launcher_foreground.png" t="Include" />
           </e>
           <e p="mipmap-xxxhdpi" t="Include">
+            <e p="EngMeIcon.png" t="Include" />
             <e p="Icon.png" t="Include" />
             <e p="launcher_foreground.png" t="Include" />
           </e>
@@ -181,6 +186,22 @@
         <e p="Assets.xcassets" t="Include">
           <e p="AppIcon.appiconset" t="Include">
             <e p="Contents.json" t="Include" />
+            <e p="Icon-40.png" t="Include" />
+            <e p="Icon-40@2x.png" t="Include" />
+            <e p="Icon-40@3x.png" t="Include" />
+            <e p="Icon-60@2x.png" t="Include" />
+            <e p="Icon-60@3x.png" t="Include" />
+            <e p="Icon-72.png" t="Include" />
+            <e p="Icon-72@2x.png" t="Include" />
+            <e p="Icon-76.png" t="Include" />
+            <e p="Icon-76@2x.png" t="Include" />
+            <e p="Icon-83.5@2x.png" t="Include" />
+            <e p="Icon-Small-50.png" t="Include" />
+            <e p="Icon-Small-50@2x.png" t="Include" />
+            <e p="Icon-Small.png" t="Include" />
+            <e p="Icon-Small@2x.png" t="Include" />
+            <e p="Icon-Small@3x.png" t="Include" />
+            <e p="Icon.png" t="Include" />
             <e p="Icon1024.png" t="Include" />
             <e p="Icon120.png" t="Include" />
             <e p="Icon152.png" t="Include" />
@@ -194,7 +215,14 @@
             <e p="Icon76.png" t="Include" />
             <e p="Icon80.png" t="Include" />
             <e p="Icon87.png" t="Include" />
+            <e p="Icon@2x.png" t="Include" />
+            <e p="ios-marketing.png" t="Include" />
+            <e p="NotificationIcon@2x.png" t="Include" />
+            <e p="NotificationIcon@3x.png" t="Include" />
+            <e p="NotificationIcon~ipad.png" t="Include" />
+            <e p="NotificationIcon~ipad@2x.png" t="Include" />
           </e>
+          <e p="Contents.json" t="Include" />
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="engME.iOS.csproj" t="IncludeRecursive" />

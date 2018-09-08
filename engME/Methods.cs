@@ -77,6 +77,31 @@ namespace engME
         {
             void HideKeyboard();
         }
-        
+
+        public static string Transliterate(string input)
+        {
+            string Transliteration;
+            var Letter = input.ToUpper();
+
+            switch (Letter)
+            {
+                case "X":
+                    Transliteration = "S";
+                    break;
+                case "Z":
+                    Transliteration="J";
+                    break;
+                case "Q":
+                    Transliteration = "Ch";
+                    break;
+                case "C":
+                    Transliteration = "T";
+                    break;
+                default:
+                    Transliteration = input;
+                    break;
+            }
+            return Transliteration;
+        }
     }
 }

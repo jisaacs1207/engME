@@ -7,10 +7,6 @@ namespace engME
 {
     public partial class YourFavoritesPage : ContentPage
     {
-        public static ObservableCollection<NameObject> _names { get; set; }
-            = new ObservableCollection<NameObject>(App.NameList);
-        public static ObservableCollection<NameObject> _favoritenames { get; set; }
-            = new ObservableCollection<NameObject>();
         public YourFavoritesPage()
         {
             populateFavorites();
@@ -18,13 +14,11 @@ namespace engME
             FavoritedNameList.ItemsSource = _favoritenames;
         }
 
-        private async Task FavoritedNameList_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            var name = e.SelectedItem as NameObject;
-            if (name == null) return;
-            await Navigation.PushModalAsync(new FullInfoPage(name));
-            FavoritedNameList.SelectedItem = null;
-        }
+        public static ObservableCollection<NameObject> _names { get; set; }
+            = new ObservableCollection<NameObject>(App.NameList);
+
+        public static ObservableCollection<NameObject> _favoritenames { get; set; }
+            = new ObservableCollection<NameObject>();
 
         private void FavoriteHeart_OnClicked(object sender, EventArgs e)
         {
@@ -37,14 +31,24 @@ namespace engME
                 Methods.RemoveNameFromFavorites(classId);
                 button.Image = "favorite.png";
                 button.Opacity = .3;
-                Console.WriteLine("Removed");
+                if (App.FavoriteList.Count == 0)
+                {
+                    FavoritesListViewStack.IsVisible = false;
+                    NoFavoritesLayout.IsVisible = true;
+
+                }
+                else
+                {
+                    FavoritesListViewStack.IsVisible = true;
+                    NoFavoritesLayout.IsVisible = false;
+
+                }
             }
             else
             {
                 Methods.AddNameToFavorites(classId);
                 button.Image = "favoritered.png";
                 button.Opacity = 1;
-                Console.WriteLine("Added");
             }
         }
 
@@ -55,17 +59,36 @@ namespace engME
             {
                 var name = x.Name;
                 foreach (var favoritename in App.FavoriteList)
-                {
-                    if(name==favoritename) _favoritenames.Add(x);
-                }
+                    if (name == favoritename)
+                        _favoritenames.Add(x);
             }
         }
-        
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
             FavoritedNameList.ItemsSource = null;
             FavoritedNameList.ItemsSource = _favoritenames;
+            if (App.FavoriteList.Count == 0)
+            {
+                FavoritesListViewStack.IsVisible = false;
+                NoFavoritesLayout.IsVisible = true;
+
+            }
+            else
+            {
+                FavoritesListViewStack.IsVisible = true;
+                NoFavoritesLayout.IsVisible = false;
+
+            }
+        }
+
+        private async void FavoritedNameList_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var name = e.SelectedItem as NameObject;
+            if (name == null) return;
+            await Navigation.PushModalAsync(new FullInfoPage(name));
+            FavoritedNameList.SelectedItem = null;
         }
     }
 }
