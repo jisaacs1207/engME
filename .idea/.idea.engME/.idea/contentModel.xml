@@ -223,6 +223,10 @@
             <e p="NotificationIcon~ipad@2x.png" t="Include" />
           </e>
           <e p="Contents.json" t="Include" />
+          <e p="engME.imageset" t="Include">
+            <e p="Contents.json" t="Include" />
+            <e p="engME.pdf" t="Include" />
+          </e>
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="engME.iOS.csproj" t="IncludeRecursive" />

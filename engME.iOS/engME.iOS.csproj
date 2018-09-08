@@ -162,6 +162,8 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\NotificationIcon~ipad.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\NotificationIcon~ipad%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ios-marketing.png" />
+    <ImageAsset Include="Assets.xcassets\engME.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\engME.imageset\engME.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -217,5 +219,9 @@
     <Content Include="Resources\settings@1x.png" />
     <Content Include="Resources\settings@2x.png" />
     <Content Include="Resources\settings@3x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\engME.imageset\" />
+    <Folder Include="Assets.xcassets\engME.imageset\" />
   </ItemGroup>
 </Project>
