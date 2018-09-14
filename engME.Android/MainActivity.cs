@@ -6,7 +6,7 @@ using Xamarin.Forms.Platform.Android;
 
 namespace engME.Droid
 {
-    [Activity(Label = "engME", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true,
+    [Activity(Label = "engME", Icon = "@mipmap/engmeicon", Theme = "@style/MainTheme", MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : FormsAppCompatActivity
     {
