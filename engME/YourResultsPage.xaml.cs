@@ -311,12 +311,14 @@ namespace engME
                 ShowFilters = false;
                 FiltersGrid.IsVisible = false;
                 button.Text = " ↓ Show Filters ↓ ";
+                FilterSeperator.IsVisible = false;
             }
             else
             {
                 ShowFilters = true;
                 FiltersGrid.IsVisible = true;
                 button.Text = " ↑ Hide Filters ↑ ";
+                FilterSeperator.IsVisible = true;
             } 
         }
 

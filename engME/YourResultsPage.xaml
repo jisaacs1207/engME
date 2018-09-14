@@ -16,47 +16,51 @@
                        TextChanged="SearchBar_OnTextChanged"
                        x:Name="NameSearch"
                        BackgroundColor="LightGray" />
-
-            <Button Text=" ↓ Show Filters ↓ " Clicked="ShowFiltersButton_OnClicked" HeightRequest="12" Scale=".8" />
+           
+            
+            <Button Text=" ↓ Show Filters ↓ " Clicked="ShowFiltersButton_OnClicked" HeightRequest="25" FontSize="Medium" Margin="0,2,0,2" />
+            
+            <BoxView Color="DarkGray" HeightRequest="1" VerticalOptions="FillAndExpand"/>
             <Grid HorizontalOptions="CenterAndExpand" Margin="2,0,2,0" IsVisible="False" x:Name="FiltersGrid"
-                  Padding="5">
+                  Padding="7">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width=".5*" />
                     <ColumnDefinition Width=".9*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="  Male  " HeightRequest="15"
+                <Button Text=" Male " HeightRequest="30"
                         x:Name="ShowMaleButton"
                         Clicked="ShowMaleButton_OnClicked"
                         Grid.Row="0"
-                        Grid.Column="0" />
-                <Button Text="  Female  " HeightRequest="15"
+                        Grid.Column="0"/>
+                <Button Text=" Female " HeightRequest="30"
                         x:Name="ShowFemaleButton"
                         Clicked="ShowFemaleButton_OnClicked"
                         Grid.Row="1"
                         Grid.Column="0" />
-                <Button Text="  Only Popular  " HeightRequest="15"
+                <Button Text=" Only Popular " HeightRequest="30"
                         x:Name="ShowPopularButton"
                         Clicked="ShowPopularButton_OnClicked"
                         Grid.Row="0"
                         Grid.Column="2" />
-                <Button Text="  Only Suggested  " HeightRequest="15"
+                <Button Text=" Only Suggested " HeightRequest="30"
                         x:Name="ShowSuggestedButton"
                         Clicked="ShowSuggestedButton_OnClicked"
                         Grid.Row="1"
-                        Grid.Column="2" />
-                <Button Text="  Liberal  "
-                        x:Name="ShowLiberalButton" HeightRequest="15"
+                        Grid.Column="2"/>
+                <Button Text=" Liberal "
+                        x:Name="ShowLiberalButton" HeightRequest="30"
                         Clicked="ShowLiberalButton_OnClicked"
                         Grid.Row="0"
-                        Grid.Column="1" />
-                <Button Text="  Conservative  "
-                        x:Name="ShowConservativeButton" HeightRequest="15"
+                        Grid.Column="1"/>
+                <Button Text=" Conservative "
+                        x:Name="ShowConservativeButton" HeightRequest="30"
                         Clicked="ShowConservativeButton_OnClicked"
                         Grid.Row="1"
                         Grid.Column="1" />
 
             </Grid>
+            <BoxView Color="DarkGray" HeightRequest="1" VerticalOptions="FillAndExpand" x:Name="FilterSeperator" IsVisible="False" />
         </StackLayout>
         <StackLayout x:Name="NoNamesStack" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="false">
             <Label HorizontalTextAlignment="Center" TextColor="DarkGray">

@@ -13,7 +13,7 @@
     <StackLayout Margin="20,20,20,20" VerticalOptions="CenterAndExpand">
         <AbsoluteLayout Padding="10">
             <Image x:Name="engme"
-                   Source="engME.png" 
+                   Source="engMeLogo.png" 
                    HorizontalOptions="FillAndExpand" 
                    VerticalOptions="FillAndExpand" 
                    Aspect="AspectFit"
@@ -21,7 +21,9 @@
                    AbsoluteLayout.LayoutFlags="All"/>
         </AbsoluteLayout>
         <StackLayout>
-            <Label Text="Note : You can skip this and just click the 'Names' tab to filter manually." FontSize="10" Margin="0,0,0,10"/>
+            <BoxView Color="DarkGray" HeightRequest="1" VerticalOptions="FillAndExpand"/>
+            <Label Text="Note : You can skip this and just click the 'Names' tab to find names manually." FontSize="10" />
+            <BoxView Color="DarkGray" HeightRequest="1" VerticalOptions="FillAndExpand" Margin="0,0,0,10"/>
             <StackLayout>
                 <Label Text="What Is Your First Name?" TextColor="#0099ff"/>
                 <Entry x:Name="NameEntry" MaxLength="12" Placeholder="Name" Margin="0,0,0,10" TextChanged="NameEntry_OnTextChanged" TextColor="#ff0080"/>

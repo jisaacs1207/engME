@@ -27,6 +27,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -60,8 +61,11 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -164,6 +168,25 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ios-marketing.png" />
     <ImageAsset Include="Assets.xcassets\engME.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\engME.imageset\engME.pdf" />
+    <ImageAsset Include="Assets.xcassets\engMeLogo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\engMeLogo.imageset\engMELogoVNoBak.pdf" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-568h%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-667h%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Landscape-2436h%403x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Landscape-736h%403x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Portrait-2436h%403x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Portrait-736h%403x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default~ipad.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default~ipad%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default~ipad~landscape.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default~ipad~landscape%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default~ipad~landscape~nostatusbar.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default~ipad~landscape~nostatusbar%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default~ipad~nostatusbar.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default~ipad~nostatusbar%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -223,5 +246,10 @@
   <ItemGroup>
     <Folder Include="Assets.xcassets\engME.imageset\" />
     <Folder Include="Assets.xcassets\engME.imageset\" />
+    <Folder Include="Assets.xcassets\engMeLogo.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
   </ItemGroup>
 </Project>
